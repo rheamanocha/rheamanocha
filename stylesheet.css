@@ -15,7 +15,9 @@ h2{ /* Portfolio item page title */
   /* color: rgb(60, 83, 128); */
 	color: rgb(36, 50, 77);
   margin-left: 50px;
+	margin-top: 30px;
 	font-family: 'Yellowtail', cursive;
+	font-size: 42px;
 
 }
 
@@ -55,6 +57,10 @@ li a{
 	text-decoration: none;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
+}
+
+li a:active{
+	color: rgb(36, 50, 77);
 }
 
 .projects{
