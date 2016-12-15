@@ -45,7 +45,6 @@ ul{
 	text-align: center;
   overflow: hidden;
   padding-left: 0;
-	margin-top: 20px;
 }
 
 li{
@@ -53,7 +52,6 @@ li{
 }
 
 li a{
-  margin: 20px 10px;
 	text-decoration: none;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
