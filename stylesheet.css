@@ -24,6 +24,7 @@ h2{ /* Portfolio item page title */
 h3{ /* Subheadings */
   color: rgb(99, 109, 128);
   margin-left: 20px;
+	margin-bottom: 10px;
 	font-family: 'Open Sans', sans-serif;
 }
 
