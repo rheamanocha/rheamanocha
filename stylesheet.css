@@ -11,25 +11,18 @@ h1{ /* Title of page - Rhea Manocha */
 	font-size: 12vw;
 }
 
-@media only screen and (min-width: 768px) { /* Desktop */
-		h1{font-size: 75px;}
-}
-
 h2{ /* Portfolio item page title */
   /* color: rgb(60, 83, 128); */
 	color: rgb(36, 50, 77);
-  margin-left: 50px;
-	margin-top: 30px;
 	font-family: 'Yellowtail', cursive;
-	font-size: 42px;
+	font-size: 6vw;
 
 }
 
 h3{ /* Subheadings */
   color: rgb(99, 109, 128);
-  margin-left: 20px;
-	margin-bottom: 10px;
 	font-family: 'Open Sans', sans-serif;
+	font-size: 4vw;
 }
 
 h4{ /* Card title */
@@ -42,6 +35,12 @@ p{ /* Card text */
   color: rgb(99, 109, 128);
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
+}
+
+@media only screen and (min-width: 768px) { /* Desktop */
+		h1{font-size: 75px;}
+		h2{font-size: 42px;}
+		h3{font-size: 24px;}
 }
 
 /* ----------LIST ITEMS---------- */
