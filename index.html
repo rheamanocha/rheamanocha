@@ -19,7 +19,13 @@
 	</head>
 	<style>
 		body{
-			background-color:rgb(36, 50, 77);
+			background-color:rgb(36, 50, 77); /* For browsers that do not support gradients */
+		  background: -webkit-linear-gradient(left top, rgb(36, 50, 77), #576E99, #6C95E6); /* For Safari 5.1 to 6.0 */
+		  background: -o-linear-gradient(bottom right, rgb(36, 50, 77), #576E99, #6C95E6); /* For Opera 11.1 to 12.0 */
+		  background: -moz-linear-gradient(bottom right, rgb(36, 50, 77), #576E99, #6C95E6); /* For Firefox 3.6 to 15 */
+		  background: linear-gradient(to bottom right, rgb(36, 50, 77), #576E99, #6C95E6); /* Standard syntax */
+			background-size: 100% 300%;
+			background-repeat: no-repeat;
 		}
 		a{
 			color: white;
@@ -57,7 +63,6 @@
         <li><a class="cta-home" href="resume.html">Resume</a></li>
       </ul>
     </header>
-
 	</body>
 
 
