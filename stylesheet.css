@@ -8,7 +8,11 @@ h1{ /* Title of page - Rhea Manocha */
   color: rgb(36, 50, 77);
 	margin-top: 40px;
 	font-family: 'Yellowtail', cursive;
-	font-size: 75px;
+	font-size: 10vw;
+}
+
+@media only screen and (min-width: 768px) { /* Desktop */
+		h1{font-size: 75px;}
 }
 
 h2{ /* Portfolio item page title */
@@ -95,7 +99,7 @@ li a:active{
 }
 
 /* ----------GHOST BUTTON---------- */
-.cta {
+.cta { /* Not call to action anymore, change all names later */
     -moz-border-radius: 2px;
     -moz-transition: 0.2s ease-out;
     -ms-transition: 0.2s ease-out;
