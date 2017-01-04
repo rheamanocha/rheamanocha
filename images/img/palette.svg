@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1811px" height="300px" viewBox="0 0 1811 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>palette</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="palette">
+            <rect id="Rectangle" fill="#AB5000" x="-5" y="-3" width="305" height="305"></rect>
+            <rect id="Rectangle" fill="#F49931" x="300" y="0" width="300" height="300"></rect>
+            <rect id="Rectangle" fill="#A77871" x="600" y="0" width="300" height="300"></rect>
+            <rect id="Rectangle" fill="#5A2338" x="900" y="0" width="300" height="300"></rect>
+            <rect id="Rectangle" fill="#2D171C" x="1200" y="0" width="300" height="300"></rect>
+            <text id="RGB-HEX" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="36" font-weight="bold" fill="#FFFFFF">
+                <tspan x="16" y="219">RGB</tspan>
+                <tspan x="16" y="264">HEX</tspan>
+            </text>
+            <text id="171,-80,-0-AB5000" font-family="SourceSansPro-Regular, Source Sans Pro" font-size="36" font-weight="normal" fill="#FFFFFF">
+                <tspan x="103" y="219">171, 80, 0</tspan>
+                <tspan x="103" y="264">AB5000</tspan>
+            </text>
+            <text id="RGB-HEX" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="36" font-weight="bold" fill="#FFFFFF">
+                <tspan x="316" y="219">RGB</tspan>
+                <tspan x="316" y="264">HEX</tspan>
+            </text>
+            <text id="244,-153,-49-F49931" font-family="SourceSansPro-Regular, Source Sans Pro" font-size="36" font-weight="normal" fill="#FFFFFF">
+                <tspan x="403" y="219">244, 153, 49</tspan>
+                <tspan x="403" y="264">F49931</tspan>
+            </text>
+            <text id="RGB-HEX" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="36" font-weight="bold" fill="#FFFFFF">
+                <tspan x="616" y="219">RGB</tspan>
+                <tspan x="616" y="264">HEX</tspan>
+            </text>
+            <text id="167,-120,-113-A77871" font-family="SourceSansPro-Regular, Source Sans Pro" font-size="36" font-weight="normal" fill="#FFFFFF">
+                <tspan x="699" y="219">167, 120, 113</tspan>
+                <tspan x="699" y="264">A77871</tspan>
+            </text>
+            <text id="RGB-HEX" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="36" font-weight="bold" fill="#FFFFFF">
+                <tspan x="916" y="219">RGB</tspan>
+                <tspan x="916" y="264">HEX</tspan>
+            </text>
+            <text id="90,-35,-56-5A2338" font-family="SourceSansPro-Regular, Source Sans Pro" font-size="36" font-weight="normal" fill="#FFFFFF">
+                <tspan x="1003" y="219">90, 35, 56</tspan>
+                <tspan x="1003" y="264">5A2338</tspan>
+            </text>
+            <text id="RGB-HEX" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="36" font-weight="bold" fill="#FFFFFF">
+                <tspan x="1227" y="219">RGB</tspan>
+                <tspan x="1227" y="264">HEX</tspan>
+            </text>
+            <text id="45,-23,-28-2D171C" font-family="SourceSansPro-Regular, Source Sans Pro" font-size="36" font-weight="normal" fill="#FFFFFF">
+                <tspan x="1314" y="219">45, 23, 28</tspan>
+                <tspan x="1314" y="264">2D171C</tspan>
+            </text>
+            <text id="RGB-HEX" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="36" font-weight="bold" fill="#000000">
+                <tspan x="1519" y="219">RGB</tspan>
+                <tspan x="1519" y="264">HEX</tspan>
+            </text>
+            <text id="255,-255,-255-FFFFFF" font-family="SourceSansPro-Regular, Source Sans Pro" font-size="36" font-weight="normal" fill="#000000">
+                <tspan x="1606" y="219">255, 255, 255</tspan>
+                <tspan x="1606" y="264">FFFFFF</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
