@@ -1,0 +1,22 @@
+{
+  "slug": "health-navigation",
+  "title": "Health navigation",
+  "summary": "An independent project on helping people find their way through the health care system.",
+  "company": "Freelance",
+  "role": "[Your role]",
+  "timeline": "[Timeline]",
+  "team": "[Team or client]",
+  "status": "Independent",
+  "tags": ["Health", "Research", "End to end"],
+  "cover": { "kind": "health", "image": "", "alt": "" },
+  "draft": true,
+  "sections": [
+    { "type": "text", "heading": "The problem", "body": "[Who you designed for and what made navigating care hard for them.]" },
+    { "type": "bullets", "heading": "My role", "items": ["[What you owned]", "[Who you worked with]"] },
+    { "type": "text", "heading": "Research", "body": "[Who you talked to and what you learned.]" },
+    { "type": "image", "heading": "Key screens", "image": "", "caption": "[What the reader should notice]" },
+    { "type": "text", "heading": "The solution", "body": "[What you designed and the reasoning behind it.]" },
+    { "type": "metrics", "heading": "Outcome", "metrics": [{ "value": "[Number]", "label": "[What it measures]" }] },
+    { "type": "text", "heading": "What I learned", "body": "[One honest takeaway.]" }
+  ]
+}
