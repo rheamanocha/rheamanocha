@@ -1,0 +1,111 @@
+{
+  "name": "Rhea Manocha",
+  "firstName": "Rhea",
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/rheamanocha",
+    "resume": "assets/resume.pdf",
+    "email": ""
+  },
+  "hero": {
+    "headline": "Hi, I'm Rhea. I design AI for the tools people work in.",
+    "intro": "Six years of UX design across Microsoft Stream, AI agents, and Copilot in Word. I also prototype in code with Claude, because building the thing is how I figure out if the idea works.",
+    "now": "Currently a Product Designer on Office Shared Experiences, working on Catch Up in Word",
+    "prompts": [
+      { "prompt": "Catch me up on this document", "title": "While you were away", "lines": ["3 sections changed", "2 comments mention you", "1 decision is waiting on you"], "slug": "catch-up-in-word", "related": "Catch Up in Word" },
+      { "prompt": "Record my screen and share it", "title": "Recording saved", "lines": ["Captured in one click", "Transcript added", "Link copied for your team"], "slug": "stream-screen-recording", "related": "Screen recording in Stream" },
+      { "prompt": "Handle the follow-ups from this meeting", "title": "Working on it", "lines": ["Read the notes", "Drafted 3 follow-up messages", "Waiting for your review"], "slug": "gather-agent", "related": "Gather Agent and Copilot Actions" }
+    ]
+  },
+  "work": {
+    "title": "Selected work",
+    "intro": "Shipped features, AI experiments that never launched, and independent work. Each one covers the problem, what I did, and what I learned."
+  },
+  "featured": ["catch-up-in-word", "gather-agent", "stream-screen-recording", "health-navigation"],
+  "lenses": [
+    {
+      "key": "ai",
+      "label": "AI-native companies (Anthropic, OpenAI, Cursor, Vercel, Figma)",
+      "headline": "Hi, I'm Rhea. I design AI products and build them in code.",
+      "intro": "I've designed AI agents and Copilot features at Microsoft, and I vibe code prototypes with Claude to test ideas before they're built. Six years of UX design.",
+      "featured": ["gather-agent", "catch-up-in-word", "stream-screen-recording", "health-navigation"],
+      "sectionOrder": ["work", "lab", "strengths"],
+      "pillarOrder": ["0", "1"]
+    },
+    {
+      "key": "enterprise",
+      "label": "Enterprise and productivity (Google, ServiceNow, Salesforce, Adobe, Notion, Glean)",
+      "headline": "Hi, I'm Rhea. I design AI features for the tools teams rely on every day.",
+      "intro": "Six years of UX design across Microsoft Stream, AI agents, and Copilot in Word. I work across surfaces, teams, and constraints, and I prototype in code with Claude to test ideas early.",
+      "featured": ["catch-up-in-word", "gather-agent", "stream-screen-recording", "health-navigation"],
+      "sectionOrder": ["work", "strengths", "lab"],
+      "pillarOrder": ["1", "0"]
+    },
+    {
+      "key": "video",
+      "label": "Video (Loom, Zoom, Descript, YouTube, Adobe)",
+      "headline": "Hi, I'm Rhea. I design how people create and share video at work.",
+      "intro": "I've worked on Microsoft Stream, including screen recording, and now design AI features in Word. I also prototype in code with Claude.",
+      "featured": ["stream-screen-recording", "catch-up-in-word", "gather-agent", "health-navigation"],
+      "sectionOrder": ["work", "strengths", "lab"],
+      "pillarOrder": ["1", "0"]
+    },
+    {
+      "key": "health",
+      "label": "Health (Abridge, Ambience, Carbon Health)",
+      "headline": "Hi, I'm Rhea. I design AI that people can trust.",
+      "intro": "I design AI features at Microsoft, where clear controls and honest feedback matter, and I took on an independent project about helping people find their way through health care.",
+      "featured": ["health-navigation", "catch-up-in-word", "gather-agent", "stream-screen-recording"],
+      "sectionOrder": ["work", "strengths", "lab"],
+      "pillarOrder": ["1", "0"]
+    }
+  ],
+  "pillars": [
+    {
+      "title": "AI-first, and I build to learn",
+      "text": "I've designed Copilot features and exploratory agents that take work off people's plates. When I want to test an idea, I vibe code it with Claude instead of waiting on a mockup.\n\nThe lab below is a small collection of what came out of that.",
+      "links": [
+        { "label": "Gather Agent and Copilot Actions", "slug": "gather-agent" },
+        { "label": "Catch Up in Word", "slug": "catch-up-in-word" },
+        { "label": "See the lab", "url": "#lab" }
+      ]
+    },
+    {
+      "title": "Enterprise depth, on products people rely on",
+      "text": "Work tools have to be clear for new users and fast for people who live in them. I've designed across Microsoft 365 surfaces and teams, and I'm comfortable with the complexity that comes with products at that scale.",
+      "links": [
+        { "label": "Screen recording in Stream", "slug": "stream-screen-recording" },
+        { "label": "Catch Up in Word", "slug": "catch-up-in-word" }
+      ]
+    }
+  ],
+  "lab": {
+    "title": "The lab",
+    "intro": "Small things I've built with Claude. Some are useful, some are just fun.",
+    "items": [
+      { "title": "National parks tracker", "text": "An interactive map and checklist for the parks I've visited and the ones I haven't.", "url": "", "tag": "Built with Claude" },
+      { "title": "Fitness Wrapped", "text": "An animated year-in-review for training data, in the spirit of the music apps' recaps.", "url": "", "tag": "Built with Claude" },
+      { "title": "Copy testing tool", "text": "An HTML tool for comparing UX copy options and analyzing the results.", "url": "", "tag": "Built with Claude" },
+      { "title": "Photo sorter", "text": "A Python script that sorts a messy photo library into folders.", "url": "", "tag": "Built with Claude" }
+    ]
+  },
+  "about": {
+    "headline": "I like making complicated software feel obvious.",
+    "intro": "I'm a Product Designer at Microsoft on Office Shared Experiences, where I work on Catch Up in Word and Copilot. Before that I worked on AI experiences and automation, and on Microsoft Stream.\n\nI studied at Purdue and co-founded Benefit.design, a nonprofit that connects student volunteer designers with nonprofits that need design help.\n\nThese days a lot of my thinking happens in code. I prototype with Claude to test ideas quickly, and I bring that speed back into design work.",
+    "photo": "",
+    "how": [
+      { "title": "Start with the real task", "text": "I begin with what someone is trying to get done, then decide whether AI helps at all." },
+      { "title": "Prototype early", "text": "A working prototype answers questions a static screen can't, so I build one as soon as I can." },
+      { "title": "Design for trust", "text": "AI features need clear controls, honest feedback, and an easy way to undo." }
+    ],
+    "experience": [
+      { "org": "Microsoft", "role": "Product Designer, Office Shared Experiences", "text": "Designing Catch Up in Word and Copilot since May 2025. Before that, Office AI Experiences and Automation (June 2024 to May 2025), exploring agents and automation. Also worked on Microsoft Stream." },
+      { "org": "Benefit.design", "role": "Co-founder", "text": "Started a nonprofit that matches student volunteer designers with nonprofits that need design support." },
+      { "org": "Purdue University", "role": "Education", "text": "" }
+    ],
+    "outside": "Outside work I'm usually outdoors, chasing national parks and training for endurance events."
+  },
+  "footer": {
+    "headline": "Let's talk about AI, enterprise design, or building in code.",
+    "note": "Made with Claude. Last updated November 2026."
+  }
+}

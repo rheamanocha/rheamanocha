@@ -1,0 +1,22 @@
+{
+  "slug": "catch-up-in-word",
+  "title": "Catch Up in Word",
+  "summary": "Helping people pick a shared document back up without rereading all of it.",
+  "company": "Microsoft",
+  "role": "Product Designer",
+  "timeline": "May 2025 to present",
+  "team": "Office Shared Experiences",
+  "status": "Shipped",
+  "tags": ["Word", "Copilot", "Enterprise"],
+  "cover": { "kind": "document", "image": "", "alt": "" },
+  "draft": true,
+  "sections": [
+    { "type": "text", "heading": "The problem", "body": "[Two or three sentences: who was struggling, with what, and why it mattered. Include what people did before this existed.]" },
+    { "type": "bullets", "heading": "My role", "items": ["[What you owned from start to finish]", "[Who you partnered with]", "[Decisions you drove]"] },
+    { "type": "text", "heading": "Process", "body": "[How you learned about the problem: research, data, prototypes, critiques. Name one thing that changed your mind.]" },
+    { "type": "image", "heading": "Key screens", "image": "", "caption": "[Describe what the reader should notice]" },
+    { "type": "text", "heading": "The solution", "body": "[What shipped, and the two or three design decisions that mattered most. Explain the why.]" },
+    { "type": "metrics", "heading": "Impact", "metrics": [{ "value": "[Number]", "label": "[What it measures]" }, { "value": "[Number]", "label": "[What it measures]" }] },
+    { "type": "text", "heading": "What I learned", "body": "[One honest takeaway about designing AI for a document tool used at scale.]" }
+  ]
+}
