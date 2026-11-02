@@ -82,10 +82,10 @@
     "title": "The lab",
     "intro": "Small things I've built with Claude. Some are useful, some are just fun.",
     "items": [
-      { "title": "National parks tracker", "text": "An interactive map and checklist for the parks I've visited and the ones I haven't.", "url": "", "tag": "Built with Claude" },
+      { "title": "National parks tracker", "text": "An interactive tracker for the U.S. national parks I've visited and the ones still on my list.", "url": "", "tag": "Built with Claude" },
       { "title": "Fitness Wrapped", "text": "An animated year-in-review for training data, in the spirit of the music apps' recaps.", "url": "", "tag": "Built with Claude" },
-      { "title": "Copy testing tool", "text": "An HTML tool for comparing UX copy options and analyzing the results.", "url": "", "tag": "Built with Claude" },
-      { "title": "Photo sorter", "text": "A Python script that sorts a messy photo library into folders.", "url": "", "tag": "Built with Claude" }
+      { "title": "Strava card collage", "text": "A concept for turning Strava activity cards into a shareable collage.", "url": "", "tag": "Concept" },
+      { "title": "Travel log interfaces", "text": "Five interface directions for a personal travel log.", "url": "", "tag": "Design exploration" }
     ]
   },
   "about": {
