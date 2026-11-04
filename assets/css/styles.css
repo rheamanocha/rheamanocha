@@ -168,7 +168,7 @@ blockquote cite{display:block;margin-top:12px;font:500 15px var(--body);color:va
 .next a:hover{text-decoration:underline}
 
 /* about */
-.about-hero{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:start;padding:64px 0 40px}
+.about-hero{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:start;padding:64px 28px 40px}
 .about-hero h1{font-size:clamp(2.4rem,5vw,4rem);margin-bottom:24px}
 .about-hero p{font-size:19px;color:var(--ink2);max-width:640px;margin:0 0 18px}
 .portrait{aspect-ratio:4/5;border-radius:28px;background:var(--sun);display:grid;place-items:center;font-family:var(--display);font-size:120px;overflow:hidden}
