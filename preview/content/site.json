@@ -212,16 +212,16 @@
     "photo": "",
     "how": [
       {
-        "title": "Start with the real task",
-        "text": "I begin with what someone is trying to get done, then decide whether AI helps at all."
+        "title": "Grounded in research",
+        "text": "I start with what people are actually trying to get done. I've run 100+ interviews and usability tests, and I let what I hear decide what to build, including whether AI should be involved at all."
       },
       {
-        "title": "Prototype early",
-        "text": "A working prototype answers questions a static screen can't, so I build one as soon as I can."
+        "title": "Ethics and accessibility from the start",
+        "text": "I treat both as design inputs, not a final check. I've led accessibility research with people with disabilities and written accessibility specs, and I've contributed to published research on ethics in UX practice. For AI features that means clear attribution, honest feedback, and an easy way to undo."
       },
       {
-        "title": "Design for trust",
-        "text": "AI features need clear controls, honest feedback, and an easy way to undo."
+        "title": "Prototyping to communicate and experiment",
+        "text": "A working prototype settles questions a static screen can't. I use prototypes to test ideas quickly, and to help a team and leaders see the same thing, as with the agentic Gather vision prototype. I build them in Figma and in code with Claude."
       }
     ],
     "experience": [
