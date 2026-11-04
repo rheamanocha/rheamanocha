@@ -208,7 +208,7 @@
   },
   "about": {
     "headline": "I like making complicated software feel obvious.",
-    "intro": "I'm a Product Designer at Microsoft on Office Shared Experiences, where I work on Catch Up in Word and Copilot. Before that I worked on AI experiences and automation, and on Microsoft Stream.\n\nI studied at Purdue and co-founded benefit.design, a nonprofit that connects student volunteer designers with nonprofits that need design help.\n\nThese days a lot of my thinking happens in code. I prototype with Claude to test ideas quickly, and I bring that speed back into design work.",
+    "intro": "I'm a Product Designer at Microsoft on Office Shared Experiences, where I work on Catch Up in Word and Copilot. Before that, I worked on AI experiences and automation, and on Microsoft Stream.\n\nI studied at Purdue and co-founded benefit.design, a nonprofit that connects student volunteer designers with nonprofits that need design help.\n\nThese days, a lot of my thinking happens in code. I prototype with Claude to test ideas quickly, and I bring that speed back into design work.",
     "photo": "",
     "how": [
       {
@@ -217,11 +217,11 @@
       },
       {
         "title": "Ethics and accessibility from the start",
-        "text": "I treat both as design inputs, not a final check. I've led accessibility research with people with disabilities and written accessibility specs, and I've contributed to published research on ethics in UX practice. For AI features that means clear attribution, honest feedback, and an easy way to undo."
+        "text": "I treat both as design inputs, not a final check. I've led accessibility research with people with disabilities and written accessibility specs, and I've contributed to published research on ethics in UX practice. For AI features, that means clear attribution, honest feedback, and an easy way to undo."
       },
       {
         "title": "Prototyping to communicate and experiment",
-        "text": "A working prototype settles questions a static screen can't. I use prototypes to test ideas quickly, and to help a team and leaders see the same thing, as with the agentic Gather vision prototype. I build them in Figma and, increasingly, by vibe coding working versions with Claude."
+        "text": "A working prototype settles questions a static screen can't. I use prototypes to test ideas quickly and to help a team and leaders see the same thing, as with the agentic Gather vision prototype. I build them in Figma and, increasingly, by vibe coding working versions with Claude."
       }
     ],
     "experience": [
@@ -238,13 +238,13 @@
       {
         "org": "Purdue University",
         "role": "UX Design, BS. Minors in Psychology and Management",
-        "text": "Where I got my start. Alongside classes I interned at Pivotal Cloud Foundry, Zero Systems, and Microsoft, worked as an undergraduate research assistant on dark patterns (UXP2 Lab) and on a course website (Freeform), and was Secretary of Purdue UX and on the media team for Purdue Hackers."
+        "text": "Where I got my start. Alongside classes, I interned at Pivotal Cloud Foundry, Zero Systems, and Microsoft, worked as an undergraduate research assistant on dark patterns (UXP2 Lab) and on a course website (Freeform), and was Secretary of Purdue UX and on the media team for Purdue Hackers."
       }
     ],
-    "outside": "Outside work I'm usually outdoors. I love to travel, and national parks are my favorite way to do it: a good trail, a big view, and a plan that is only half planned.\n\nI train for endurance sports and keep fitness a steady part of my week. I like having a race on the calendar, and I like the quiet logic of getting a little better each week.\n\nI read a lot, I host events (I'll happily plan a gathering down to the details), and I play with data for fun, from my own training and travel to whatever else I'm curious about.",
+    "outside": "Outside work, I'm usually outdoors. I love to travel, and national parks are my favorite way to do it: a good trail, a big view, and a plan that is only half planned.\n\nI train for endurance sports and keep fitness a steady part of my week. I like having a race on the calendar, and I like the quiet logic of getting a little better each week.\n\nI read a lot, I host events (I'll happily plan a gathering down to the details), and I play with data for fun, from my own training and travel to whatever else I'm curious about.",
     "publications": {
       "title": "Research and publications",
-      "intro": "Alongside my design work I've contributed to research on ethics in UX practice and on healthcare navigation for women in prison. Here is the published work I'm part of.",
+      "intro": "Alongside my design work, I've contributed to research on ethics in UX practice and on healthcare navigation for women in prison. Here is the published work I'm part of.",
       "items": [
         {
           "year": "2022",
