@@ -208,7 +208,7 @@
   },
   "about": {
     "headline": "I like making complicated software feel obvious.",
-    "intro": "I'm a Product Designer at Microsoft on Office Shared Experiences, where I work on Catch Up in Word and Copilot. Before that I worked on AI experiences and automation, and on Microsoft Stream.\n\nI studied at Purdue and co-founded Benefit.design, a nonprofit that connects student volunteer designers with nonprofits that need design help.\n\nThese days a lot of my thinking happens in code. I prototype with Claude to test ideas quickly, and I bring that speed back into design work.",
+    "intro": "I'm a Product Designer at Microsoft on Office Shared Experiences, where I work on Catch Up in Word and Copilot. Before that I worked on AI experiences and automation, and on Microsoft Stream.\n\nI studied at Purdue and co-founded benefit.design, a nonprofit that connects student volunteer designers with nonprofits that need design help.\n\nThese days a lot of my thinking happens in code. I prototype with Claude to test ideas quickly, and I bring that speed back into design work.",
     "photo": "",
     "how": [
       {
@@ -231,7 +231,7 @@
         "text": "Designing Catch Up in Word and Copilot since May 2025. Before that, Office AI Experiences and Automation (June 2024 to May 2025), exploring agents and automation. Also worked on Microsoft Stream."
       },
       {
-        "org": "Benefit.design",
+        "org": "benefit.design",
         "role": "Co-founder",
         "text": "Started a nonprofit that matches student volunteer designers with nonprofits that need design support."
       },
