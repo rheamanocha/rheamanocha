@@ -268,17 +268,29 @@
           "authors": "Chivukula, S. S., Watkins, C. R., Manocha, R., Chen, J., Gray, C. M.",
           "venue": "CHI 2020, ACM Conference on Human Factors in Computing Systems",
           "kind": "Conference paper",
-          "url": ""
+          "url": "https://doi.org/10.1145/3313831.3376459"
         }
       ],
       "thanks": {
         "label": "Also acknowledged in",
         "items": [
           {
-            "year": "2021",
+            "year": "2024",
+            "title": "Quant-Ethico: An Approach to Quantifying and Interpreting Ethical Decision Making",
+            "venue": "DRS",
+            "url": "https://dl.designresearchsociety.org/drs-conference-papers/drs2024/researchpapers/18/"
+          },
+          {
+            "year": "2022",
             "title": "Web Augmentation for Well-being: The Human-Centered Design of a Takeaway Food Ordering Digital Platform",
             "venue": "Interacting with Computers",
             "url": "https://doi.org/10.1093/iwc/iwac015"
+          },
+          {
+            "year": "2021",
+            "title": "Appetite for Disruption: Designing Human-Centred Augmentations to an Online Food Ordering Platform",
+            "venue": "British HCI",
+            "url": "https://doi.org/10.14236/ewic/HCI2021.16"
           },
           {
             "year": "2019",
