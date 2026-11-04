@@ -184,6 +184,37 @@ collections:
                   - { label: Organization, name: org, widget: string }
                   - { label: Role, name: role, widget: string }
                   - { label: Description, name: text, widget: text, required: false }
+              - label: Publications
+                name: publications
+                widget: object
+                required: false
+                fields:
+                  - { label: Section title, name: title, widget: string }
+                  - { label: Intro, name: intro, widget: text, required: false }
+                  - label: Publications
+                    name: items
+                    widget: list
+                    fields:
+                      - { label: Year, name: year, widget: string }
+                      - { label: Title, name: title, widget: string }
+                      - { label: Authors, name: authors, widget: string }
+                      - { label: Venue, name: venue, widget: string }
+                      - { label: Type, name: kind, widget: string, required: false }
+                      - { label: Link, name: url, widget: string, required: false }
+                  - label: Also acknowledged in
+                    name: thanks
+                    widget: object
+                    required: false
+                    fields:
+                      - { label: Label, name: label, widget: string }
+                      - label: Items
+                        name: items
+                        widget: list
+                        fields:
+                          - { label: Year, name: year, widget: string }
+                          - { label: Title, name: title, widget: string }
+                          - { label: Venue, name: venue, widget: string }
+                          - { label: Link, name: url, widget: string, required: false }
               - { label: Outside work, name: outside, widget: text }
           - label: Footer
             name: footer

@@ -118,6 +118,16 @@ async function renderHome(my) {
       <div class="tags">${cs.status ? `<span class="tag status">${esc(cs.status)}</span>` : ''}${(cs.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div></a>`).join('');
 }
 
+function pubs(p) {
+  if (!p || !(p.items || []).length) return '';
+  const link = (title, url) => url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(title)}</a>` : esc(title);
+  const items = p.items.map(x => `<li class="pub"><span class="pub-year">${esc(x.year)}</span><div><h3>${link(x.title, x.url)}</h3>
+      <p class="pub-by">${esc(x.authors || '')}</p><p class="pub-venue">${esc(x.venue || '')}${x.kind ? ` <em>${esc(x.kind)}</em>` : ''}</p></div></li>`).join('');
+  const th = p.thanks && (p.thanks.items || []).length ? `<p class="pub-thanks"><strong>${esc(p.thanks.label || 'Also acknowledged in')}:</strong> ${p.thanks.items.map(x => `${link(x.title, x.url)} (${esc(x.venue)}, ${esc(x.year)})`).join('; ')}</p>` : '';
+  return `<section class="section wash"><div class="wrap"><div class="sec-head"><h2>${esc(p.title || 'Publications')}</h2></div>
+    ${p.intro ? `<p class="pub-intro">${esc(p.intro)}</p>` : ''}<ul class="pubs">${items}</ul>${th}</div></section>`;
+}
+
 function renderAbout() {
   const a = site.about || {};
   app().innerHTML = `
@@ -129,6 +139,7 @@ function renderAbout() {
     <div class="how">${(a.how || []).map(x => `<div><h3>${esc(x.title)}</h3><p>${md(x.text)}</p></div>`).join('')}</div></div></section>
   <section class="section wash"><div class="wrap"><div class="sec-head"><h2>Where I've worked</h2></div>
     <div class="xp">${(a.experience || []).map(x => `<div class="xp-row"><div><h3>${esc(x.org)}</h3><span>${esc(x.role)}</span></div><p>${md(x.text)}</p></div>`).join('')}</div></div></section>
+  ${pubs(a.publications)}
   <section class="section"><div class="wrap"><div class="sec-head"><h2>Outside the work</h2></div>
     <div style="max-width:680px">${paras(a.outside)}</div></div></section>`;
 }
