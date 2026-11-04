@@ -213,7 +213,7 @@
     "how": [
       {
         "title": "Grounded in research",
-        "text": "I start with what people are actually trying to get done. I've run 100+ interviews and usability tests, and I let what I hear decide what to build, including whether AI should be involved at all."
+        "text": "I start with what people are actually trying to get done. I've run 200+ interviews and usability tests, and I let what I hear decide what to build, including whether AI should be involved at all."
       },
       {
         "title": "Ethics and accessibility from the start",
@@ -221,7 +221,7 @@
       },
       {
         "title": "Prototyping to communicate and experiment",
-        "text": "A working prototype settles questions a static screen can't. I use prototypes to test ideas quickly, and to help a team and leaders see the same thing, as with the agentic Gather vision prototype. I build them in Figma and in code with Claude."
+        "text": "A working prototype settles questions a static screen can't. I use prototypes to test ideas quickly, and to help a team and leaders see the same thing, as with the agentic Gather vision prototype. I build them in Figma and, increasingly, by vibe coding working versions with Claude."
       }
     ],
     "experience": [
@@ -237,8 +237,8 @@
       },
       {
         "org": "Purdue University",
-        "role": "Education",
-        "text": ""
+        "role": "UX Design, BS. Minors in Psychology and Management",
+        "text": "Where I got my start. Alongside classes I interned at Pivotal Cloud Foundry, Zero Systems, and Microsoft, worked as an undergraduate research assistant on dark patterns (UXP2 Lab) and on a course website (Freeform), and was Secretary of Purdue UX and on the media team for Purdue Hackers."
       }
     ],
     "outside": "Outside work I'm usually outdoors, chasing national parks and training for endurance events.",
