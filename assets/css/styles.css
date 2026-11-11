@@ -218,3 +218,9 @@ blockquote cite{display:block;margin-top:12px;font:500 15px var(--body);color:va
 
 .embed iframe{display:block;width:100%;aspect-ratio:4/3;min-height:420px;border:1px solid var(--line,#e3e6ee);border-radius:14px;background:#f6f7fb}
 @media(max-width:640px){.embed iframe{aspect-ratio:3/4;min-height:480px}}
+
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
+.g-item{margin:0}
+.g-item img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line);box-shadow:0 6px 18px rgba(11,27,63,.08);background:#fff}
+.g-item span{display:block;margin-top:8px;font-size:.88rem;color:var(--ink2)}
+@media(max-width:640px){.gallery{grid-template-columns:1fr;gap:20px}.g-item img{max-width:420px;margin:0 auto}.g-item span{text-align:center}}
