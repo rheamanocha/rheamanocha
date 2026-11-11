@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Travel log: five interface directions | Rhea Manocha</title>
+<meta name="description" content="Five interface directions for a personal travel log app, explored as phone screens: feed, story, atlas, year in review, and journal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;600;700&family=Manrope:wght@600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;600;700&family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#F4F7FF;color:#0B1B3F;font:400 17px/1.55 Inter,system-ui,sans-serif}
+.top{max-width:1180px;margin:0 auto;padding:28px 24px 8px}
+.back{display:inline-block;font-weight:600;font-size:14px;color:#0B1B3F;text-decoration:none;border:1.5px solid #0B1B3F;border-radius:999px;padding:8px 16px}
+h1{font:400 clamp(34px,5vw,56px)/1.05 Fraunces,Georgia,serif;margin:28px 0 12px;font-weight:600;letter-spacing:-.02em}
+.lede{max-width:640px;color:#46547A;margin:0 0 8px}
+.note{font-size:14px;color:#46547A;margin:0 0 24px}
+.gal{max-width:1180px;margin:0 auto;padding:8px 24px 72px;display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:36px 28px;align-items:start}
+.opt h2{font:600 18px Inter,sans-serif;margin:0 0 4px}
+.opt p{margin:0 0 14px;font-size:14px;color:#46547A}
+.frame{width:390px;max-width:100%;transform-origin:top left;border-radius:28px;overflow:hidden;box-shadow:0 18px 50px rgba(11,27,63,.18);border:1px solid #DCE3F2;background:#fff}
+.slot{overflow:hidden}
+.phone{width:390px;position:relative;overflow:hidden}
+.phone button{font-family:inherit;border:none;cursor:default}
+.chip{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:14px;font-size:13px;font-weight:600}
+.tnum{font-variant-numeric:tabular-nums}
+/* A feed */
+.A{height:844px;background:#F4F5F3;color:#14201F;font-family:Figtree,sans-serif;display:flex;flex-direction:column}
+.A .hd{display:flex;justify-content:space-between;align-items:center;padding:16px 20px 8px}.A .hd b{font-size:24px;font-weight:800;letter-spacing:-.02em}
+.A .bell{width:44px;height:44px;border-radius:22px;border:1px solid #D5DAD7;background:#fff}
+.A .hero{margin:8px 20px 0;padding:16px;background:#14201F;color:#fff;border-radius:16px}.A .hero small{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#C9D3CF;margin-bottom:12px}
+.A .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.A .g3 b{display:block;font-size:28px;font-weight:800}.A .g3 span{font-size:13px;color:#C9D3CF}
+.A .pills{display:flex;gap:8px;padding:16px 20px 8px}.A .pills button{height:44px;padding:0 18px;border-radius:22px;border:1px solid #D5DAD7;background:#fff;color:#14201F;font-size:15px;font-weight:600}.A .pills .on{background:#C2410C;color:#fff;border-color:#C2410C;font-weight:700}
+.A .cards{padding:0 20px;display:flex;flex-direction:column;gap:16px;flex:1;overflow:hidden}
+.A .card{background:#fff;border:1px solid #E1E5E2;border-radius:16px;overflow:hidden}
+.A .card .in{padding:16px}.A .card h3{margin:0;font-size:20px;font-weight:800;letter-spacing:-.01em}.A .card .d{font-size:14px;color:#55615D}
+.A .st{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px 0;margin:12px 0;border-top:1px solid #E1E5E2;border-bottom:1px solid #E1E5E2}.A .st b{display:block;font-size:18px;font-weight:800}.A .st span{font-size:12px;color:#55615D}
+.A .ph{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px}.A .ph i{height:76px;border-radius:8px;display:flex;align-items:flex-end;padding:6px;font-style:normal;font-size:12px;font-weight:600}
+.A .tag{background:#F0E4DC;color:#7C2D0A}
+.A nav{display:grid;grid-template-columns:repeat(5,1fr);align-items:center;height:84px;padding:8px 8px 16px;background:#fff;border-top:1px solid #E1E5E2;text-align:center;font-size:12px;font-weight:600;color:#55615D}
+.A nav .on{color:#C2410C;font-weight:700}.A nav .plus{width:52px;height:52px;border-radius:26px;background:#C2410C;color:#fff;font-size:28px;line-height:52px;margin:0 auto}
+/* B story */
+.B{height:1500px;background:#101418;color:#F4F1EA;font-family:'Hanken Grotesk',sans-serif}
+.B .h{height:480px;background:#2A3540;padding:16px 20px 28px;display:flex;flex-direction:column;justify-content:space-between}
+.B .circ{width:44px;height:44px;border-radius:22px;background:#101418;color:#F4F1EA;font-size:20px}
+.B .eyebrow{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#F2C14E;margin:12px 0}
+.B h3{font:700 48px/1.02 Fraunces,serif;letter-spacing:-.02em;margin:0 0 12px}
+.B .big{padding:32px 24px 24px;height:284px}.B .big div{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #2C353C;padding:0 0 8px;margin-bottom:12px}.B .big div:last-child{border:0}.B .big b{font:600 56px/1 Fraunces,serif}.B .big span{font-size:16px;color:#B4BEC5}
+.B .mc{padding:8px 24px 24px;height:400px}.B .mc h4{font:600 22px Fraunces,serif;margin:0 0 12px}
+.B .mg{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:106px 106px 96px;gap:8px}.B .mg>div{border-radius:12px;padding:10px;display:flex;flex-direction:column;justify-content:space-between;font-size:14px;font-weight:600}.B .mg .chip{height:24px;font-size:12px;background:#101418;align-self:flex-start;border-radius:12px;padding:0 10px}
+.B .cta{margin:0 24px;height:52px;border-radius:26px;background:#F2C14E;color:#101418;font-size:16px;font-weight:700;width:calc(100% - 48px)}
+/* C atlas */
+.C{height:844px;background:#D6E0EE;color:#101828;font-family:Manrope,sans-serif}
+.C svg{position:absolute;left:0;top:0}.C .stat{position:absolute;left:16px;right:16px;top:16px;height:44px;border-radius:22px;background:#fff;display:flex;align-items:center;justify-content:space-around;font-size:14px;font-weight:700}
+.C .modes{position:absolute;left:16px;top:72px;display:flex;gap:6px}.C .modes button{height:44px;padding:0 16px;border-radius:22px;background:#fff;color:#101828;font-size:14px;font-weight:700}.C .modes .on{background:#2F5BFF;color:#fff}
+.C .sheet{position:absolute;left:0;right:0;top:380px;height:380px;background:#fff;border-radius:24px 24px 0 0;padding:12px 20px}
+.C .grab{width:40px;height:4px;border-radius:2px;background:#D0D5DD;margin:0 auto 14px}.C .sheet h3{margin:0;font-size:24px;font-weight:800;letter-spacing:-.02em}.C .sheet .d{font-size:14px;color:#475467}
+.C .t{display:flex;gap:6px;margin:12px 0}.C .t span{height:30px;padding:0 12px;border-radius:15px;background:#E8EEFF;color:#1B3FD6;font-size:13px;font-weight:700;display:inline-flex;align-items:center}
+.C .r{height:56px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #EAECF0}.C .r b{display:block;font-size:15px}.C .r small{font-size:13px;color:#475467}.C .r em{font-style:normal;font-size:13px;font-weight:700;color:#1B3FD6}
+.C nav{position:absolute;left:0;right:0;bottom:0;height:84px;background:#fff;border-top:1px solid #EAECF0;display:grid;grid-template-columns:repeat(4,1fr);align-items:center;text-align:center;font-size:12px;font-weight:600;color:#475467;padding-bottom:16px}.C nav .on{color:#2F5BFF;font-weight:700}
+/* D year */
+.D{height:1380px;font-family:'Bricolage Grotesque',sans-serif;color:#16131F}
+.D>div{padding:24px}.D .s1{height:420px;background:#D7F25A;display:flex;flex-direction:column;justify-content:space-between}
+.D .y{font-size:152px;line-height:.86;font-weight:800;letter-spacing:-.05em}.D .it{font-size:52px;line-height:1;font-weight:800;letter-spacing:-.03em;padding-top:8px}
+.D .s2{height:300px;background:#5B3DF5;color:#fff;display:flex;flex-direction:column;justify-content:space-between}.D .s3{height:300px;background:#16131F;color:#D7F25A;display:flex;flex-direction:column;justify-content:space-between}
+.D .lab{font-size:15px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}.D .n41{font-size:148px;line-height:.85;font-weight:800;letter-spacing:-.05em}
+.D .s4{height:260px;background:#D7F25A}.D .row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-top:2px solid #16131F}.D .row b{font-size:32px;font-weight:800;letter-spacing:-.02em}
+.D .s5{background:#16131F;display:flex;align-items:center;height:160px}.D .s5 button{flex:1;height:52px;border-radius:26px;background:#D7F25A;color:#16131F;font-size:16px;font-weight:800}
+/* E journal */
+.E{height:1240px;background:#FBFBFA;color:#1C1917;font-family:'Instrument Sans',sans-serif}
+.E .hd{padding:12px 20px;border-bottom:1px solid #E7E5E4}.E .hd h3{font:400 34px/1.05 'Instrument Serif',serif;margin:8px 0 2px}.E .hd .d{font-size:14px;color:#57534E}
+.E .days{display:flex;gap:8px;padding-top:10px}.E .days button{flex:none;width:44px;height:44px;border-radius:22px;border:1px solid #D6D3D1;background:#fff;font-size:15px;font-weight:600}.E .days .on{background:#0F766E;color:#fff;border:0;font-weight:700}
+.E .dh{padding:20px 20px 4px}.E .dh h4{font:400 28px/1.1 'Instrument Serif',serif;margin:0}.E .dh span{font-size:14px;color:#57534E}
+.E .tl{position:relative;padding:8px 20px;display:flex;flex-direction:column;gap:12px}.E .tl:before{content:"";position:absolute;left:81px;top:24px;bottom:24px;width:2px;background:#D6D3D1}
+.E .ev{display:flex;gap:12px;align-items:flex-start}.E .ev time{width:44px;flex:none;text-align:right;font-size:13px;font-weight:600;color:#57534E;padding-top:14px}
+.E .dot{width:12px;height:12px;border-radius:6px;margin:16px -2px 0;flex:none;border:2px solid #FBFBFA;box-sizing:content-box;position:relative}
+.E .ec{flex:1;background:#fff;border:1px solid #E7E5E4;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px}.E .ec b{font-size:16px}.E .ec small{font-size:13px;color:#57534E}.E .ec .chip{height:24px;font-size:12px;padding:0 10px;align-self:flex-start}
+.E .ec .img{height:64px;border-radius:8px;display:flex;align-items:flex-end;padding:6px 8px;font-size:12px;font-weight:600}
+.E .next{margin:4px 20px 0;width:calc(100% - 40px);min-height:76px;border-radius:12px;border:1px solid #D6D3D1;background:#fff;padding:12px 16px;text-align:left}.E .next b{display:block;font:400 22px 'Instrument Serif',serif}.E .next span{font-size:13px;color:#57534E}
+.E .add{margin:24px 20px;width:calc(100% - 40px);height:52px;border-radius:26px;background:#0F766E;color:#fff;font-size:16px;font-weight:700}
+@media(max-width:420px){.gal{padding:8px 12px 56px}}
+</style>
+</head>
+<body>
+<div class="top">
+  <a class="back" href="../../#lab">&larr; Back to the lab</a>
+  <h1>Travel log: five interface directions</h1>
+  <p class="lede">I wanted one place to keep every trip, pulling from photos, maps, calendar and social posts. These are five ways the same trip could look, each designed as a phone screen with its own point of view.</p>
+  <p class="note">Design exploration only. The trip and numbers on every screen are sample content, not a working app.</p>
+</div>
+<main class="gal" id="gal">
+
+<section class="opt"><h2>A. Feed</h2><p>Trips as cards, with a running total at the top.</p>
+<div class="frame" data-h="844"><div class="slot"><div class="phone A">
+ <div class="hd"><b>Waymark</b><button class="bell" aria-label="Notifications"></button></div>
+ <div class="hero"><small>2026 so far</small><div class="g3"><div><b class="tnum">41</b><span>days away</span></div><div><b>19</b><span>cities</span></div><div><b class="tnum">24,310</b><span>miles</span></div></div></div>
+ <div class="pills"><button class="on">All trips</button><button>Friends</button><button>Tags</button></div>
+ <div class="cards">
+  <div class="card"><svg width="390" height="132" viewBox="0 0 348 132" preserveAspectRatio="xMidYMid slice" style="display:block;width:100%;height:auto" role="img" aria-label="Sample route map"><rect width="348" height="132" fill="#E4EBE8"/><path d="M0 44H348M0 88H348M87 0V132M174 0V132M261 0V132" stroke="#D3DDD8"/><path d="M40 22C100 6 170 10 226 30" stroke="#C2410C" stroke-width="2" stroke-dasharray="4 5" fill="none"/><path d="M226 30L252 56L222 84L206 96" stroke="#C2410C" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="226" cy="30" r="6" fill="#C2410C" stroke="#fff" stroke-width="2"/><circle cx="252" cy="56" r="5" fill="#C2410C" stroke="#fff" stroke-width="2"/><circle cx="222" cy="84" r="6" fill="#C2410C" stroke="#fff" stroke-width="2"/><circle cx="206" cy="96" r="5" fill="#C2410C" stroke="#fff" stroke-width="2"/></svg>
+   <div class="in"><h3>Tokyo to Kyoto, slowly</h3><div class="d">Apr 3 – 14, 2026 · Japan</div>
+   <div class="st"><div><b>12</b><span>days</span></div><div><b>4</b><span>cities</span></div><div><b>37</b><span>places</span></div><div><b class="tnum">10,798</b><span>miles</span></div></div>
+   <div class="ph"><i style="background:#E3CDBE">Shinjuku</i><i style="background:#BDD2CB">Hakone</i><i style="background:#D2C3DA">Fushimi Inari</i></div>
+   <div style="display:flex;gap:6px"><span class="chip tag">#food</span><span class="chip tag">#trains</span><span class="chip tag">#temples</span></div></div></div>
+  <div class="card in"><h3>Banff and Lake Louise</h3><div class="d">Jun 12 – 15, 2026 · Canada</div><div style="font-size:14px;padding-top:8px">4 days · 2 places · 2,180 miles</div></div>
+ </div>
+ <nav><span class="on">Feed</span><span>Map</span><span class="plus">+</span><span>Stats</span><span>You</span></nav>
+</div></div></div></section>
+
+<section class="opt"><h2>B. Story</h2><p>A trip recap that reads like a magazine opener.</p>
+<div class="frame" data-h="1500"><div class="slot"><div class="phone B">
+ <div class="h"><div style="display:flex;justify-content:space-between"><button class="circ" aria-label="Back">&lsaquo;</button><button class="circ" aria-label="Share">&uarr;</button></div>
+  <div><div style="font-size:12px;font-weight:600;color:#D5DCE1">[ Hero photo · Fushimi Inari at dawn ]</div><div class="eyebrow">Trip in review</div><h3>Tokyo to Kyoto, slowly</h3><div style="color:#E3E8EB;margin-bottom:10px">Apr 3 – 14, 2026 · Japan</div><div style="display:flex;gap:6px"><span class="chip" style="background:#101418">#food</span><span class="chip" style="background:#101418">#trains</span><span class="chip" style="background:#101418">#temples</span></div></div></div>
+ <div class="big"><div><b>12</b><span>days away</span></div><div><b>4</b><span>cities · 37 places</span></div><div><b class="tnum">10,798</b><span>miles, 538 on the ground</span></div></div>
+ <div style="height:220px;padding:0 24px"><svg width="342" height="200" viewBox="0 0 342 200" style="display:block;border-radius:16px" role="img" aria-label="Sample route map"><rect width="342" height="200" rx="16" fill="#1A2026"/><path d="M0 66H342M0 133H342M85 0V200M171 0V200M256 0V200" stroke="#232C33"/><path d="M258 40L282 78L206 132L178 158" stroke="#F2C14E" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><g fill="#F2C14E" stroke="#1A2026" stroke-width="3"><circle cx="258" cy="40" r="7"/><circle cx="282" cy="78" r="6"/><circle cx="206" cy="132" r="7"/><circle cx="178" cy="158" r="6"/></g><g font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="700" fill="#F4F1EA"><text x="196" y="36">Tokyo</text><text x="244" y="96">Hakone</text><text x="152" y="128">Kyoto</text><text x="120" y="176">Osaka</text></g></svg></div>
+ <div class="mc"><h4>Moments, collected</h4><div class="mg">
+  <div style="grid-row:1/3;background:#2A3540"><span class="chip">Photos</span>Shinjuku at night, 63 photos</div>
+  <div style="background:#3A3326"><span class="chip">Maps review</span>Ichiran Shibuya · 5 stars</div>
+  <div style="background:#26363A"><span class="chip">Calendar</span>teamLab, Apr 5 · 10:30</div>
+  <div style="grid-column:1/3;background:#35303F"><span class="chip">Instagram</span>Hakone ropeway · 2 posts, Apr 8</div></div></div>
+ <div style="display:flex;align-items:center;height:120px"><button class="cta">Share this recap</button></div>
+</div></div></div></section>
+
+<section class="opt"><h2>C. Atlas</h2><p>Start from the map, then open a place.</p>
+<div class="frame" data-h="844"><div class="slot"><div class="phone C">
+ <svg width="390" height="400" viewBox="0 0 390 400" role="img" aria-label="Sample world map with visited regions highlighted"><rect width="390" height="400" fill="#D6E0EE"/><g fill="#F5F7FB"><path d="M20 150C60 110 140 120 170 170C190 220 150 280 110 300C70 320 30 270 20 220Z"/><path d="M200 130C240 110 290 120 300 160C310 210 280 260 250 310C225 350 200 310 195 260C190 210 180 160 200 130Z"/><path d="M305 120C340 100 380 120 385 170C390 220 360 270 320 260C300 210 292 160 305 120Z"/></g><g fill="#2F5BFF" fill-opacity=".18"><circle cx="60" cy="190" r="34"/><circle cx="232" cy="160" r="30"/><circle cx="350" cy="190" r="44"/></g><g fill="#2F5BFF" stroke="#fff" stroke-width="2"><circle cx="52" cy="182" r="5"/><circle cx="70" cy="200" r="5"/><circle cx="226" cy="150" r="5"/><circle cx="242" cy="170" r="5"/><circle cx="360" cy="176" r="5"/><circle cx="344" cy="206" r="5"/></g><circle cx="352" cy="192" r="11" fill="#2F5BFF" stroke="#fff" stroke-width="3"/><circle cx="352" cy="192" r="4" fill="#fff"/><text x="296" y="236" font-family="Manrope,sans-serif" font-size="13" font-weight="800" fill="#101828">Kyoto</text></svg>
+ <div class="stat"><span>19 cities</span><span style="color:#98A2B3">·</span><span>11 countries</span><span style="color:#98A2B3">·</span><span>24,310 mi</span></div>
+ <div class="modes"><button class="on">Heatmap</button><button>Routes</button><button>Tags</button></div>
+ <div class="sheet"><div class="grab"></div><div style="display:flex;justify-content:space-between"><div><h3>Kyoto, Japan</h3><div class="d">4 nights · Apr 8 – 12 · 14 places</div></div><button style="height:44px;padding:0 16px;border-radius:22px;border:1px solid #D0D5DD;background:#fff;font-size:14px;font-weight:700">Open trip</button></div>
+ <div class="t"><span>#temples</span><span>#quiet</span><span>#would-return</span></div>
+ <div class="r"><div><b>Fushimi Inari</b><small>Apr 9 · sunrise</small></div><em>#hidden-gem</em></div><div class="r"><div><b>Nishiki Market</b><small>Apr 10 · lunch</small></div><em>#food</em></div><div class="r"><div><b>Kiyomizu-dera</b><small>Apr 11 · afternoon</small></div><em>#crowded</em></div></div>
+ <nav><span class="on">Atlas</span><span>Trips</span><span>Log</span><span>Stats</span></nav>
+</div></div></div></section>
+
+<section class="opt"><h2>D. Year in review</h2><p>One big number per screen, in the spirit of annual recaps.</p>
+<div class="frame" data-h="1380"><div class="slot"><div class="phone D">
+ <div class="s1"><div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:18px;font-weight:800">Waymark</b><span style="font-size:13px;font-weight:600;padding:0 12px;height:32px;border-radius:16px;border:2px solid #16131F;display:inline-flex;align-items:center">Year in review</span></div><div><div class="y">2026</div><div class="it">in travel.</div></div><div style="font-size:16px;font-weight:600">7 trips · 3 countries · 19 cities</div></div>
+ <div class="s2"><div class="lab">Time away</div><div style="display:flex;align-items:baseline;gap:12px"><div class="n41">41</div><div style="font-size:28px;line-height:1.05;font-weight:800">days<br>away</div></div><div style="font-size:16px">That is about 11% of the year, and your longest stretch was 12 days in Japan.</div></div>
+ <div class="s3"><div class="lab" style="color:#fff">Distance</div><div><div style="font-size:88px;line-height:.9;font-weight:800;letter-spacing:-.04em">24,310</div><div style="font-size:28px;font-weight:800">miles traveled</div></div><div style="font-size:16px;color:#fff">About 98% of the way around the Earth.</div></div>
+ <div class="s4"><div class="lab" style="margin-bottom:12px">Longest stays</div><div class="row"><b>1 · Tokyo</b><span>5 days</span></div><div class="row"><b>2 · Kyoto</b><span>4 days</span></div><div class="row"><b>3 · Banff</b><span>2 days</span></div></div>
+ <div class="s5"><button>Share your year</button></div>
+</div></div></div></section>
+
+<section class="opt"><h2>E. Journal</h2><p>A day-by-day timeline that merges every source.</p>
+<div class="frame" data-h="1240"><div class="slot"><div class="phone E">
+ <div class="hd"><div style="display:flex;justify-content:space-between"><button style="width:44px;height:44px;border-radius:22px;border:1px solid #D6D3D1;background:#fff;font-size:20px" aria-label="Back">&lsaquo;</button><button style="width:44px;height:44px;border-radius:22px;border:1px solid #D6D3D1;background:#fff" aria-label="More">&hellip;</button></div><h3>Tokyo to Kyoto, slowly</h3><div class="d">Apr 3 – 14, 2026 · 12 days · 4 cities</div>
+ <div class="days"><button>1</button><button>2</button><button class="on">3</button><button>4</button><button>5</button><button>6</button><button>7</button></div></div>
+ <div class="dh"><h4>Day 3 · Sunday, Apr 5</h4><span>Tokyo · 8.2 mi walked · 5 places · 77 photos</span></div>
+ <div class="tl">
+  <div class="ev"><time>8:40</time><i class="dot" style="background:#0F766E"></i><div class="ec"><span class="chip" style="background:#CCFBF1;color:#115E59">Photos</span><b>Tsukiji breakfast</b><div class="img" style="background:#D6E4E2">14 photos</div></div></div>
+  <div class="ev"><time>10:30</time><i class="dot" style="background:#4338CA"></i><div class="ec"><span class="chip" style="background:#E0E7FF;color:#3730A3">Calendar</span><b>teamLab Planets</b><small>Tickets for 2 · Toyosu</small></div></div>
+  <div class="ev"><time>13:15</time><i class="dot" style="background:#B45309"></i><div class="ec"><span class="chip" style="background:#FEF3C7;color:#92400E">Maps review</span><b>Ichiran Shibuya · 5 stars</b><small style="font-size:14px;color:#44403C">Worth the wait. Booth seating is great solo.</small></div></div>
+  <div class="ev"><time>17:50</time><i class="dot" style="background:#7E22CE"></i><div class="ec"><span class="chip" style="background:#F3E8FF;color:#6B21A8">Location history</span><b>8.2 miles on foot</b><small>Toyosu to Shibuya, 5 stops</small></div></div>
+  <div class="ev"><time>21:30</time><i class="dot" style="background:#0F766E"></i><div class="ec"><span class="chip" style="background:#CCFBF1;color:#115E59">Photos</span><b>Shinjuku at night</b><div class="img" style="background:#CFD8E6">63 photos</div></div></div>
+ </div>
+ <button class="next"><b>Day 4 · Apr 6 · Hakone</b><span>9 memories from 3 sources</span></button>
+ <button class="add">Add a memory</button>
+</div></div></div></section>
+</main>
+<script>
+// Scale each 390px phone frame to fit its column, so it never scrolls sideways.
+function fit(){document.querySelectorAll('.frame').forEach(f=>{const col=f.parentElement.clientWidth,s=Math.min(1,col/390),h=+f.dataset.h;const slot=f.querySelector('.slot'),ph=f.querySelector('.phone');ph.style.transform='scale('+s+')';ph.style.transformOrigin='top left';slot.style.height=(h*s)+'px';slot.style.width=(390*s)+'px';f.style.width=(390*s)+'px'})}
+window.addEventListener('resize',fit);fit();
+</script>
+</body>
+</html>

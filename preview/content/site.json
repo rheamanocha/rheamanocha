@@ -178,31 +178,43 @@
   ],
   "lab": {
     "title": "The lab",
-    "intro": "Small things I've built with Claude. Some are useful, some are just fun.",
+    "intro": "Small things I've built with Claude. Some are useful, some are just fun. Open any of them and try it.",
     "items": [
       {
+        "title": "On Repeat Recipes",
+        "text": "My cookbook website: the recipes I keep coming back to, in an editorial index you can browse and filter.",
+        "url": "lab/recipes/",
+        "tag": "Built with Claude"
+      },
+      {
         "title": "National parks tracker",
-        "text": "An interactive tracker for the U.S. national parks I've visited and the ones still on my list.",
-        "url": "",
+        "text": "An interactive tracker for the 63 U.S. national parks: 21 visited so far, filterable by region and status.",
+        "url": "lab/national-parks/",
         "tag": "Built with Claude"
       },
       {
         "title": "Fitness Wrapped",
-        "text": "An animated year-in-review for training data, in the spirit of the music apps' recaps.",
-        "url": "",
-        "tag": "Built with Claude"
-      },
-      {
-        "title": "Strava card collage",
-        "text": "A concept for turning Strava activity cards into a shareable collage.",
-        "url": "",
+        "text": "An animated year-in-review for training data, in the spirit of the music apps' recaps. Shown with sample data.",
+        "url": "lab/fitness-wrapped/",
         "tag": "Concept"
       },
       {
+        "title": "Strava card collage",
+        "text": "Drop in activity screenshots and export one shareable collage. Runs entirely in your browser.",
+        "url": "lab/strava-collage/",
+        "tag": "Built with Claude"
+      },
+      {
         "title": "Travel log interfaces",
-        "text": "Five interface directions for a personal travel log.",
-        "url": "",
+        "text": "Five interface directions for a personal travel log. Sample content.",
+        "url": "lab/travel-log/",
         "tag": "Design exploration"
+      },
+      {
+        "title": "Habit tracker",
+        "text": "A lightweight habit tracker demo that saves to your own browser. Sample data.",
+        "url": "lab/habits/",
+        "tag": "Demo"
       }
     ]
   },
