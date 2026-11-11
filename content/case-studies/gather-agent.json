@@ -1,0 +1,21 @@
+{
+  "slug": "gather-agent",
+  "title": "Gather Agent and Copilot Actions",
+  "summary": "Exploring how an AI agent could finish tasks for people instead of just answering questions.",
+  "company": "Microsoft",
+  "role": "[Your role]",
+  "timeline": "[Timeline]",
+  "team": "Office AI Experiences and Automation",
+  "status": "Explored, not shipped",
+  "tags": ["AI agents", "Automation", "Exploratory"],
+  "cover": { "kind": "agent", "image": "", "alt": "" },
+  "draft": true,
+  "sections": [
+    { "type": "text", "heading": "The opportunity", "body": "[What question the team was trying to answer about agents and automation.]" },
+    { "type": "bullets", "heading": "My role", "items": ["[What you owned]", "[Who you partnered with]", "[Decisions you drove]"] },
+    { "type": "text", "heading": "How I explored it", "body": "[The prototypes, experiments, or vibe coded demos you used to test ideas. This is a good place to show your speed.]" },
+    { "type": "image", "heading": "Concepts", "image": "", "caption": "[What the reader should notice]" },
+    { "type": "text", "heading": "Design principles for agents", "body": "[How you thought about trust, control, and handing work to an agent.]" },
+    { "type": "text", "heading": "Why it didn't ship, and what I took from it", "body": "[Be direct about the outcome. Hiring managers value what you learned when a project ends early.]" }
+  ]
+}

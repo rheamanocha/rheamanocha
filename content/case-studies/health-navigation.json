@@ -1,0 +1,139 @@
+{
+  "slug": "health-navigation",
+  "title": "Health navigation roadmaps for women in prison",
+  "summary": "A 75-page set of illustrated health guides, shaped with women in prison, to help them find their way through healthcare after release.",
+  "company": "Mothers on the Rise",
+  "role": "Lead Designer",
+  "timeline": "Jan to Nov 2022",
+  "team": "Mothers on the Rise",
+  "status": "Launched",
+  "tags": [
+    "Health",
+    "Co-design",
+    "Illustration"
+  ],
+  "cover": {
+    "kind": "health",
+    "image": "",
+    "alt": "",
+    "hero": "assets/img/health/poster.jpg",
+    "heroAlt": "The APHA 2022 poster, \"Women in prison deserve health equity and reproductive justice,\" showing 15 pages from the roadmaps and the project background, approach, product and impact."
+  },
+  "draft": false,
+  "sections": [
+    {
+      "type": "text",
+      "heading": "The problem",
+      "body": "Women leaving prison face a hard path to good healthcare. Misinformation, little support, limited access to technology, low literacy, and past trauma all stack up, and together they make it difficult to find services, understand what a doctor is saying, or speak up for yourself.\n\nThe Grassroots Maternal and Child Health Initiative at IUPUI, working with the Transitional Healthcare Team at the Indiana Department of Correction, set out to change that with a set of health promotion roadmaps. The question for design was how to make dense medical information feel clear, welcoming, and useful to someone who has every reason to distrust the system."
+    },
+    {
+      "type": "bullets",
+      "heading": "My role",
+      "items": [
+        "Led the design of the roadmap manual, from the visual language to the illustrations and the layout of each page.",
+        "Turned evidence-based health content into plain-language infographics, working with public health researchers and the Indiana Department of Correction's Transitional Healthcare Team.",
+        "Brought feedback from the women back into the design as it came in.",
+        "Presented the work with the team as a poster at the 2022 APHA Annual Meeting and Expo."
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Research and co-design",
+      "body": "The project started with user research. The team held focus groups with women in prison to hear about their experiences with healthcare. The goal was to find out which health issues they felt unclear about, so we could prioritize the topics that mattered most to them and their experiences, rather than guessing from the outside.\n\nFrom there, the content was built from trusted public health sources such as the CDC, WHO, NIH, and ACOG. We kept the women in the loop and gathered their feedback on the drafts, which shaped how the roadmaps were written and illustrated."
+    },
+    {
+      "type": "bullets",
+      "heading": "Design principles",
+      "items": [
+        "**Empowerment.** Every page should help someone feel more able to ask questions and make decisions.",
+        "**Women-focused illustration.** People in the roadmaps should look like the women reading them.",
+        "**Accessible language.** Short sentences, plain words, and no assumed medical knowledge.",
+        "**Transparency.** Say what to expect at each step, including what is not covered or not guaranteed.",
+        "**Scalability.** A consistent system that could keep growing across topics.",
+        "**Breadth.** Cover the full range of health topics women asked about, not just one."
+      ]
+    },
+    {
+      "type": "gallery",
+      "heading": "What the roadmaps look like",
+      "items": [
+        {
+          "image": "assets/img/health/prescription.jpg",
+          "caption": "What to know about a prescription",
+          "alt": "Roadmap page: what you need to know about your prescription"
+        },
+        {
+          "image": "assets/img/health/ob-gyn.jpg",
+          "caption": "Visiting your OB-GYN",
+          "alt": "Roadmap page: visiting your OB-GYN"
+        },
+        {
+          "image": "assets/img/health/mammogram.jpg",
+          "caption": "What is a mammogram?",
+          "alt": "Roadmap page: what is a mammogram?"
+        },
+        {
+          "image": "assets/img/health/pharmacy.jpg",
+          "caption": "Picking up a prescription at a pharmacy",
+          "alt": "Roadmap page: pick up prescriptions at a pharmacy"
+        },
+        {
+          "image": "assets/img/health/prenatal.jpg",
+          "caption": "Scheduling prenatal check-ups",
+          "alt": "Roadmap page: schedule your prenatal check-ups"
+        },
+        {
+          "image": "assets/img/health/aerobic-activity.jpg",
+          "caption": "Aerobic activity",
+          "alt": "Roadmap page: aerobic activity"
+        }
+      ],
+      "body": "To make 75 pages feel like one manual, I established a design system for the roadmaps. It covers a typographic hierarchy, page layouts, a color palette, and an illustration style, including a character library with a range of skin tones, hairstyles, and body shapes. Every page draws on the same system, so the roadmaps read as a unified set while each topic still gets its own page."
+    },
+    {
+      "type": "button",
+      "heading": "Read the full manual",
+      "body": "The complete 75-page manual is available as a PDF.",
+      "label": "Open the full PDF",
+      "url": "https://drive.google.com/file/d/1ZEodVi9w_SRqHZZpq7Rxa0JFPaWaIUXp/view"
+    },
+    {
+      "type": "text",
+      "heading": "The solution",
+      "body": "The result is a 75-page manual of illustrated roadmaps. Topics include teaching advocacy skills, pregnancy and prenatal care, general healthcare, getting prescriptions and using a pharmacy, mental health, eating disorders, safe sex, types of abuse, women's healthcare, preventing and treating STDs, nutrition, and how to access all of these services at low cost.\n\nThe system keeps the tone warm and welcoming, and avoids the overly pink look often used for women's health materials.\n\nThe team also set up a way for correctional staff to hand out the roadmaps, so each woman gets the ones that match her needs as she leaves prison."
+    },
+    {
+      "type": "metrics",
+      "heading": "By the numbers",
+      "metrics": [
+        {
+          "value": "75",
+          "label": "pages of illustrated roadmaps"
+        },
+        {
+          "value": "45",
+          "label": "women's healthcare topics covered"
+        },
+        {
+          "value": "1",
+          "label": "poster at APHA 2022"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Impact",
+      "body": "The printed roadmaps were distributed in the Indiana Women's Prison and used as class materials. Their intended impact is to raise women's health literacy and self-efficacy, help them speak up in a healthcare setting, increase their control over their own reproductive health, and improve their well-being and that of their children and families.\n\nOne of the women shared that the booklet encouraged her to advocate for herself, and it gave her the confidence to say no to something she didn't want at a doctor's appointment. Hearing that was a deeply personal moment for me, and a powerful reminder of what it means to use my skills to empower others.\n\nThe research team has also been working on a follow-up evaluation, with interviews and a short survey, to learn how the roadmaps affect women after release."
+    },
+    {
+      "type": "bullets",
+      "heading": "What I learned",
+      "items": [
+        "**Health design has its own challenges.** Communicating clearly, keeping everything accessible, and making sure all of it is evidence based all pull on each other.",
+        "**Honesty and restraint go together.** The hard part was balancing honesty with giving just enough information, without overwhelming the reader.",
+        "**Layout is a design constraint.** We had a lot to say, so the challenge was condensing it into one-page layouts that were still engaging and easy to understand.",
+        "**It stretched my craft.** This project extended my skills into print design and illustration."
+      ]
+    }
+  ]
+}

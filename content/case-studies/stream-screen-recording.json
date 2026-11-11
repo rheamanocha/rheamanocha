@@ -1,0 +1,22 @@
+{
+  "slug": "stream-screen-recording",
+  "title": "Screen recording in Stream",
+  "summary": "Letting people record their screen and share it, without leaving Microsoft 365.",
+  "company": "Microsoft",
+  "role": "[Your role]",
+  "timeline": "[Timeline]",
+  "team": "[Team]",
+  "status": "Shipped",
+  "tags": ["Stream", "Video", "Enterprise"],
+  "cover": { "kind": "video", "image": "", "alt": "" },
+  "draft": true,
+  "sections": [
+    { "type": "text", "heading": "The problem", "body": "[Who needed to record their screen, what got in the way, and why it mattered at work.]" },
+    { "type": "bullets", "heading": "My role", "items": ["[What you owned]", "[Who you partnered with]", "[Decisions you drove]"] },
+    { "type": "text", "heading": "Process", "body": "[How you explored the problem and what you tested.]" },
+    { "type": "image", "heading": "Key screens", "image": "", "caption": "[What the reader should notice]" },
+    { "type": "text", "heading": "The solution", "body": "[What shipped and why you designed it that way.]" },
+    { "type": "metrics", "heading": "Impact", "metrics": [{ "value": "[Number]", "label": "[What it measures]" }] },
+    { "type": "text", "heading": "What I learned", "body": "[One honest takeaway.]" }
+  ]
+}

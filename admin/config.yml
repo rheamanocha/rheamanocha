@@ -1,0 +1,224 @@
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/portfolio   # change after you create the repo
+  branch: main
+  base_url: https://api.netlify.com      # lets Netlify handle GitHub sign-in
+  auth_endpoint: auth
+
+local_backend: true                      # for testing: npx decap-server
+publish_mode: simple
+media_folder: assets/img
+public_folder: /assets/img
+
+collections:
+  - name: case-studies
+    label: Case studies
+    folder: content/case-studies
+    extension: json
+    format: json
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}}"
+    fields:
+      - { label: "Slug (web address, lowercase with dashes)", name: slug, widget: string }
+      - { label: Title, name: title, widget: string }
+      - { label: One-line summary, name: summary, widget: text }
+      - { label: Company, name: company, widget: string, required: false }
+      - { label: Role, name: role, widget: string, required: false }
+      - { label: Timeline, name: timeline, widget: string, required: false }
+      - { label: Team, name: team, widget: string, required: false }
+      - { label: Status, name: status, widget: string, required: false, hint: "For example Shipped / Explored / Independent" }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - label: Cover
+        name: cover
+        widget: object
+        fields:
+          - { label: Art style when there is no image, name: kind, widget: select, options: [document, video, agent, health], default: document }
+          - { label: Cover image, name: image, widget: image, required: false }
+          - { label: Image description, name: alt, widget: string, required: false }
+      - { label: "Still a draft?", name: draft, widget: boolean, default: false }
+      - label: Sections
+        name: sections
+        widget: list
+        types:
+          - label: Text
+            name: text
+            widget: object
+            fields:
+              - { label: Type, name: type, widget: hidden, default: text }
+              - { label: Heading, name: heading, widget: string }
+              - { label: "Body (blank line between paragraphs)", name: body, widget: text }
+          - label: Bullets
+            name: bullets
+            widget: object
+            fields:
+              - { label: Type, name: type, widget: hidden, default: bullets }
+              - { label: Heading, name: heading, widget: string }
+              - { label: Items, name: items, widget: list }
+          - label: Image
+            name: image
+            widget: object
+            fields:
+              - { label: Type, name: type, widget: hidden, default: image }
+              - { label: Heading, name: heading, widget: string, required: false }
+              - { label: Image, name: image, widget: image, required: false }
+              - { label: Caption, name: caption, widget: string, required: false }
+          - label: Numbers
+            name: metrics
+            widget: object
+            fields:
+              - { label: Type, name: type, widget: hidden, default: metrics }
+              - { label: Heading, name: heading, widget: string }
+              - label: Numbers
+                name: metrics
+                widget: list
+                fields:
+                  - { label: Value, name: value, widget: string }
+                  - { label: What it measures, name: label, widget: string }
+          - label: Quote
+            name: quote
+            widget: object
+            fields:
+              - { label: Type, name: type, widget: hidden, default: quote }
+              - { label: Heading, name: heading, widget: string, required: false }
+              - { label: Quote, name: quote, widget: text }
+              - { label: Who said it, name: attribution, widget: string, required: false }
+
+  - name: pages
+    label: Home, about, and links
+    files:
+      - label: Site content
+        name: site
+        file: content/site.json
+        format: json
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: First name, name: firstName, widget: string }
+          - label: Links
+            name: links
+            widget: object
+            fields:
+              - { label: LinkedIn URL, name: linkedin, widget: string }
+              - { label: Resume file path or URL, name: resume, widget: string, hint: "Upload a PDF to assets and paste its path, like assets/resume.pdf" }
+              - { label: Email (leave blank to hide), name: email, widget: string, required: false }
+          - label: Home hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: string }
+              - { label: Intro, name: intro, widget: text }
+              - { label: Currently, name: now, widget: string }
+              - label: Animated examples
+                name: prompts
+                widget: list
+                fields:
+                  - { label: What the person types, name: prompt, widget: string }
+                  - { label: Result title, name: title, widget: string }
+                  - { label: Result lines, name: lines, widget: list }
+                  - { label: Related case study slug, name: slug, widget: string, required: false }
+                  - { label: Related link text, name: related, widget: string, required: false }
+          - label: Work section
+            name: work
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Intro, name: intro, widget: text }
+          - { label: "Case studies on home, in order (slugs)", name: featured, widget: list }
+          - label: Lenses (a shareable version of the home page, like #for-ai)
+            name: lenses
+            widget: list
+            fields:
+              - { label: Key (used in the link, lowercase), name: key, widget: string }
+              - { label: Who it's for (for your notes), name: label, widget: string }
+              - { label: Headline, name: headline, widget: string }
+              - { label: Intro, name: intro, widget: text }
+              - { label: Work intro (optional), name: workIntro, widget: text, required: false }
+              - { label: Case study slugs in order, name: featured, widget: list }
+              - { label: Section order (work, strengths, lab), name: sectionOrder, widget: list, required: false }
+              - { label: Strengths order (0 is first, 1 is second), name: pillarOrder, widget: list, required: false }
+          - label: Strengths
+            name: pillars
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - label: Links
+                name: links
+                widget: list
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Case study slug, name: slug, widget: string, required: false }
+                  - { label: Or a URL, name: url, widget: string, required: false }
+          - label: Lab
+            name: lab
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Intro, name: intro, widget: text }
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: text, widget: text }
+                  - { label: Link (optional), name: url, widget: string, required: false }
+                  - { label: Tag, name: tag, widget: string, required: false }
+          - label: About page
+            name: about
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: string }
+              - { label: Intro, name: intro, widget: text }
+              - { label: Photo, name: photo, widget: image, required: false }
+              - label: How I work
+                name: how
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+              - label: Experience
+                name: experience
+                widget: list
+                fields:
+                  - { label: Organization, name: org, widget: string }
+                  - { label: Role, name: role, widget: string }
+                  - { label: Description, name: text, widget: text, required: false }
+              - label: Publications
+                name: publications
+                widget: object
+                required: false
+                fields:
+                  - { label: Section title, name: title, widget: string }
+                  - { label: Intro, name: intro, widget: text, required: false }
+                  - label: Publications
+                    name: items
+                    widget: list
+                    fields:
+                      - { label: Year, name: year, widget: string }
+                      - { label: Title, name: title, widget: string }
+                      - { label: Authors, name: authors, widget: string }
+                      - { label: Venue, name: venue, widget: string }
+                      - { label: Type, name: kind, widget: string, required: false }
+                      - { label: Link, name: url, widget: string, required: false }
+                  - label: Also acknowledged in
+                    name: thanks
+                    widget: object
+                    required: false
+                    fields:
+                      - { label: Label, name: label, widget: string }
+                      - label: Items
+                        name: items
+                        widget: list
+                        fields:
+                          - { label: Year, name: year, widget: string }
+                          - { label: Title, name: title, widget: string }
+                          - { label: Venue, name: venue, widget: string }
+                          - { label: Link, name: url, widget: string, required: false }
+              - { label: Outside work, name: outside, widget: text }
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: string }
+              - { label: Small note, name: note, widget: string }
