@@ -102,9 +102,14 @@
       "body": "The printed roadmaps were distributed in the Indiana Women's Prison and used as class materials. Their intended impact is to raise women's health literacy and self-efficacy, help them speak up in a healthcare setting, increase their control over their own reproductive health, and improve their well-being and that of their children and families.\n\nOne of the women shared that the booklet encouraged her to advocate for herself, and it gave her the confidence to say no to something she didn't want at a doctor's appointment. Hearing that was a deeply personal moment for me, and a powerful reminder of what it means to use my skills to empower others.\n\nThe research team has also been working on a follow-up evaluation, with interviews and a short survey, to learn how the roadmaps affect women after release."
     },
     {
-      "type": "text",
+      "type": "bullets",
       "heading": "What I learned",
-      "body": "Designing with the people who will use the work changes what you make. Feedback from the women shaped the tone, the illustrations, and which topics went first. I also learned how much clear structure and plain language matter when the subject is hard and the reader is understandably wary. Those are the same instincts I bring to AI products today, where trust, clarity, and honest feedback decide whether people keep using something."
+      "items": [
+        "**Health design has its own challenges.** Communicating clearly, keeping everything accessible, and making sure all of it is evidence based all pull on each other.",
+        "**Honesty and restraint go together.** The hard part was balancing honesty with giving just enough information, without overwhelming the reader.",
+        "**Layout is a design constraint.** We had a lot to say, so the challenge was condensing it into one-page layouts that were still engaging and easy to understand.",
+        "**It stretched my craft.** This project extended my skills into print design and illustration."
+      ]
     }
   ]
 }
