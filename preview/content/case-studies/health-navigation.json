@@ -75,12 +75,11 @@
       ]
     },
     {
-      "type": "embed",
-      "heading": "Flip through the full manual",
-      "src": "https://drive.google.com/file/d/1ZEodVi9w_SRqHZZpq7Rxa0JFPaWaIUXp/preview",
-      "title": "Health Navigation Roadmaps, full manual",
-      "caption": "The complete 75-page manual.",
-      "link": "https://drive.google.com/file/d/1ZEodVi9w_SRqHZZpq7Rxa0JFPaWaIUXp/view"
+      "type": "button",
+      "heading": "Read the full manual",
+      "body": "The complete 75-page manual is available as a PDF.",
+      "label": "Open the full PDF",
+      "url": "https://drive.google.com/file/d/1ZEodVi9w_SRqHZZpq7Rxa0JFPaWaIUXp/view"
     },
     {
       "type": "text",
