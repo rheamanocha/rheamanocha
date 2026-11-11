@@ -160,6 +160,7 @@ async function renderCase(slug, my) {
     if (s.type === 'bullets') b = `<ul>${(s.items || []).map(x => `<li>${md(x)}</li>`).join('')}</ul>`;
     else if (s.type === 'metrics') b = `<div class="metrics">${(s.metrics || []).map(m => `<div class="metric"><b>${esc(m.value)}</b><span>${esc(m.label)}</span></div>`).join('')}</div>`;
     else if (s.type === 'image') b = `<figure><div class="shot">${s.image ? `<img src="${esc(s.image)}" alt="${esc(s.caption || '')}">` : 'Add a screenshot or prototype here'}</div>${s.caption ? `<figcaption>${esc(s.caption)}</figcaption>` : ''}</figure>`;
+    else if (s.type === 'embed') b = `<figure class="embed"><iframe src="${esc(s.src)}" title="${esc(s.title || s.heading || 'Embedded document')}" loading="lazy" allow="fullscreen"></iframe>${s.caption ? `<figcaption>${esc(s.caption)}${s.link ? ` <a href="${esc(s.link)}" target="_blank" rel="noopener">Open the full PDF</a>` : ''}</figcaption>` : ''}</figure>`;
     else if (s.type === 'quote') b = `<blockquote>${esc(s.quote)}${s.attribution ? `<cite>${esc(s.attribution)}</cite>` : ''}</blockquote>`;
     else b = paras(s.body);
     return `<section class="cs-sec" id="s${i}">${head}${b}</section>`;
