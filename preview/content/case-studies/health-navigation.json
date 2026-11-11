@@ -54,10 +54,25 @@
       ]
     },
     {
-      "type": "image",
+      "type": "gallery",
       "heading": "What the roadmaps look like",
-      "image": "assets/img/health/visit-prep.jpg",
-      "caption": "Preparing for a visit: what to bring to the doctor, what to know about a prescription, and what happens at a primary care appointment."
+      "items": [
+        {
+          "image": "assets/img/health/what-to-take.jpg",
+          "caption": "What to take to the doctor",
+          "alt": "Roadmap page: what should I take to the doctor?"
+        },
+        {
+          "image": "assets/img/health/prescription.jpg",
+          "caption": "What to know about a prescription",
+          "alt": "Roadmap page: what you need to know about your prescription"
+        },
+        {
+          "image": "assets/img/health/primary-care.jpg",
+          "caption": "Your primary care appointment",
+          "alt": "Roadmap page: your appointment with a primary care physician"
+        }
+      ]
     },
     {
       "type": "embed",
@@ -73,10 +88,25 @@
       "body": "The result is a 75-page manual of illustrated roadmaps. Topics include teaching advocacy skills, pregnancy and prenatal care, general healthcare, getting prescriptions and using a pharmacy, mental health, eating disorders, safe sex, types of abuse, women's healthcare, preventing and treating STDs, nutrition, and how to access all of these services at low cost.\n\nTo make a large amount of information feel approachable, I built one design language across every page: a shared type system and color palette, curvilinear shapes, and a character library with a range of skin tones, hairstyles, and body shapes. That gave the manual a warm, welcoming feel without falling back on the typical overly pink look often used for women's health materials.\n\nThe team also set up a way for correctional staff to hand out the roadmaps, so each woman gets the ones that match her needs as she leaves prison."
     },
     {
-      "type": "image",
+      "type": "gallery",
       "heading": "",
-      "image": "assets/img/health/topics.jpg",
-      "caption": "Myths about birth control, how to pick up a prescription at a pharmacy, and what to expect at prenatal check-ups."
+      "items": [
+        {
+          "image": "assets/img/health/birth-control-myths.jpg",
+          "caption": "Myths about birth control",
+          "alt": "Roadmap page: myths about birth control"
+        },
+        {
+          "image": "assets/img/health/pharmacy.jpg",
+          "caption": "Picking up a prescription at a pharmacy",
+          "alt": "Roadmap page: pick up prescriptions at a pharmacy"
+        },
+        {
+          "image": "assets/img/health/prenatal.jpg",
+          "caption": "Scheduling prenatal check-ups",
+          "alt": "Roadmap page: schedule your prenatal check-ups"
+        }
+      ]
     },
     {
       "type": "metrics",
