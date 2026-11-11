@@ -32,14 +32,14 @@
       "items": [
         "Led the design of the roadmap manual, from the visual language to the illustrations and the layout of each page.",
         "Turned evidence-based health content into plain-language infographics, working with public health researchers and the Indiana Department of Correction's Transitional Healthcare Team.",
-        "Brought feedback from the women back into the design every week.",
+        "Brought feedback from the women back into the design as it came in.",
         "Presented the work with the team as a poster at the 2022 APHA Annual Meeting and Expo."
       ]
     },
     {
       "type": "text",
       "heading": "Research and co-design",
-      "body": "The project started by listening. The team held focus groups with women in prison to hear about their experiences with healthcare, then worked with them to understand their needs and priorities and to decide what the roadmaps should cover. The team's guiding idea was #AskTheWomen.\n\nThe content comes from trusted public health sources such as the CDC, WHO, NIH, and ACOG. We then met weekly with the women to review drafts, so every iteration was shaped by the people who would use it."
+      "body": "The project started with user research. The team held focus groups with women in prison to hear about their experiences with healthcare. The goal was to find out which health issues they felt unclear about, so we could prioritize the topics that mattered most to them and their experiences, rather than guessing from the outside.\n\nFrom there, the content was built from trusted public health sources such as the CDC, WHO, NIH, and ACOG. We kept the women in the loop and gathered their feedback on the drafts, which shaped how the roadmaps were written and illustrated."
     },
     {
       "type": "bullets",
@@ -104,7 +104,7 @@
     {
       "type": "text",
       "heading": "What I learned",
-      "body": "Designing with the people who will use the work changes what you make. Weekly feedback from the women shaped the tone, the illustrations, and which topics went first. I also learned how much clear structure and plain language matter when the subject is hard and the reader is understandably wary. Those are the same instincts I bring to AI products today, where trust, clarity, and honest feedback decide whether people keep using something."
+      "body": "Designing with the people who will use the work changes what you make. Feedback from the women shaped the tone, the illustrations, and which topics went first. I also learned how much clear structure and plain language matter when the subject is hard and the reader is understandably wary. Those are the same instincts I bring to AI products today, where trust, clarity, and honest feedback decide whether people keep using something."
     }
   ]
 }
