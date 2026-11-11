@@ -1,22 +1,100 @@
 {
   "slug": "health-navigation",
-  "title": "Health navigation",
-  "summary": "An independent project on helping people find their way through the health care system.",
-  "company": "Freelance",
-  "role": "[Your role]",
-  "timeline": "[Timeline]",
-  "team": "[Team or client]",
-  "status": "Independent",
-  "tags": ["Health", "Research", "End to end"],
-  "cover": { "kind": "health", "image": "", "alt": "" },
-  "draft": true,
+  "title": "Health navigation roadmaps for women in prison",
+  "summary": "A 75-page set of illustrated health guides, shaped with women in prison, to help them find their way through healthcare after release.",
+  "company": "Mothers on the Rise",
+  "role": "Lead Designer",
+  "timeline": "Jan to Nov 2022",
+  "team": "Mothers on the Rise",
+  "status": "Launched",
+  "tags": [
+    "Health",
+    "Co-design",
+    "Illustration"
+  ],
+  "cover": {
+    "kind": "health",
+    "image": "assets/img/health/cover.jpg",
+    "alt": "Four pages from the roadmaps: visiting your OB-GYN, what to take to the doctor, your primary care appointment, and what to know about a prescription."
+  },
+  "draft": false,
   "sections": [
-    { "type": "text", "heading": "The problem", "body": "[Who you designed for and what made navigating care hard for them.]" },
-    { "type": "bullets", "heading": "My role", "items": ["[What you owned]", "[Who you worked with]"] },
-    { "type": "text", "heading": "Research", "body": "[Who you talked to and what you learned.]" },
-    { "type": "image", "heading": "Key screens", "image": "", "caption": "[What the reader should notice]" },
-    { "type": "text", "heading": "The solution", "body": "[What you designed and the reasoning behind it.]" },
-    { "type": "metrics", "heading": "Outcome", "metrics": [{ "value": "[Number]", "label": "[What it measures]" }] },
-    { "type": "text", "heading": "What I learned", "body": "[One honest takeaway.]" }
+    {
+      "type": "text",
+      "heading": "The problem",
+      "body": "Women leaving prison face a hard path to good healthcare. Misinformation, little support, limited access to technology, low literacy, and past trauma all stack up, and together they make it difficult to find services, understand what a doctor is saying, or speak up for yourself.\n\nThe Grassroots Maternal and Child Health Initiative at IUPUI, working with the Transitional Healthcare Team at the Indiana Department of Correction, set out to change that with a set of health promotion roadmaps. The question for design was how to make dense medical information feel clear, welcoming, and useful to someone who has every reason to distrust the system."
+    },
+    {
+      "type": "bullets",
+      "heading": "My role",
+      "items": [
+        "Led the design of the roadmap manual, from the visual language to the illustrations and the layout of each page.",
+        "Turned evidence-based health content into plain-language infographics, working with public health researchers and the Indiana Department of Correction's Transitional Healthcare Team.",
+        "Brought feedback from the women back into the design every week.",
+        "Presented the work with the team as a poster at the 2022 APHA Annual Meeting and Expo."
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Research and co-design",
+      "body": "The project started by listening. The team held focus groups with women in prison to hear about their experiences with healthcare, then worked with them to understand their needs and priorities and to decide what the roadmaps should cover. The team's guiding idea was #AskTheWomen.\n\nThe content comes from trusted public health sources such as the CDC, WHO, NIH, and ACOG. We then met weekly with the women to review drafts, so every iteration was shaped by the people who would use it."
+    },
+    {
+      "type": "bullets",
+      "heading": "Design principles",
+      "items": [
+        "**Empowerment.** Every page should help someone feel more able to ask questions and make decisions.",
+        "**Women-focused illustration.** People in the roadmaps should look like the women reading them.",
+        "**Accessible language.** Short sentences, plain words, and no assumed medical knowledge.",
+        "**Transparency.** Say what to expect at each step, including what is not covered or not guaranteed.",
+        "**Scalability.** A consistent system that could keep growing across topics.",
+        "**Breadth.** Cover the full range of health topics women asked about, not just one."
+      ]
+    },
+    {
+      "type": "image",
+      "heading": "What the roadmaps look like",
+      "image": "assets/img/health/visit-prep.jpg",
+      "caption": "Preparing for a visit: what to bring to the doctor, what to know about a prescription, and what happens at a primary care appointment."
+    },
+    {
+      "type": "text",
+      "heading": "The solution",
+      "body": "The result is a 75-page manual of illustrated roadmaps. Topics include teaching advocacy skills, pregnancy and prenatal care, general healthcare, getting prescriptions and using a pharmacy, mental health, eating disorders, safe sex, types of abuse, women's healthcare, preventing and treating STDs, nutrition, and how to access all of these services at low cost.\n\nTo make a large amount of information feel approachable, I built one design language across every page: a shared type system and color palette, curvilinear shapes, and a character library with a range of skin tones, hairstyles, and body shapes. That gave the manual a warm, welcoming feel without falling back on the typical overly pink look often used for women's health materials.\n\nThe team also set up a way for correctional staff to hand out the roadmaps, so each woman gets the ones that match her needs as she leaves prison."
+    },
+    {
+      "type": "image",
+      "heading": "",
+      "image": "assets/img/health/topics.jpg",
+      "caption": "Myths about birth control, how to pick up a prescription at a pharmacy, and what to expect at prenatal check-ups."
+    },
+    {
+      "type": "metrics",
+      "heading": "By the numbers",
+      "metrics": [
+        {
+          "value": "75",
+          "label": "pages of illustrated roadmaps"
+        },
+        {
+          "value": "45",
+          "label": "women's healthcare topics covered"
+        },
+        {
+          "value": "1",
+          "label": "poster at APHA 2022"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Impact",
+      "body": "The printed roadmaps were distributed in the Indiana Women's Prison and used as class materials. Their intended impact is to raise women's health literacy and self-efficacy, help them speak up in a healthcare setting, increase their control over their own reproductive health, and improve their well-being and that of their children and families.\n\nThe research team has also been working on a follow-up evaluation, with interviews and a short survey, to learn how the roadmaps affect women after release."
+    },
+    {
+      "type": "text",
+      "heading": "What I learned",
+      "body": "Designing with the people who will use the work changes what you make. Weekly feedback from the women shaped the tone, the illustrations, and which topics went first. I also learned how much clear structure and plain language matter when the subject is hard and the reader is understandably wary. Those are the same instincts I bring to AI products today, where trust, clarity, and honest feedback decide whether people keep using something."
+    }
   ]
 }

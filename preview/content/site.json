@@ -48,7 +48,7 @@
   },
   "work": {
     "title": "Selected work",
-    "intro": "Shipped features, AI experiments that never launched, and independent work. Each one covers the problem, what I did, and what I learned."
+    "intro": "Shipped features, AI experiments that never launched, and research-driven community work. Each one covers the problem, what I did, and what I learned."
   },
   "featured": [
     "catch-up-in-word",
@@ -124,7 +124,7 @@
       "key": "health",
       "label": "Health (Abridge, Ambience, Carbon Health)",
       "headline": "Hi, I'm Rhea. I design AI that people can trust.",
-      "intro": "I design AI features at Microsoft, where clear controls and honest feedback matter, and I took on an independent project about helping people find their way through health care.",
+      "intro": "I design AI features at Microsoft, where clear controls and honest feedback matter. Earlier, I led the design of illustrated health guides, made with women in prison, to help them find their way through healthcare after release.",
       "featured": [
         "health-navigation",
         "catch-up-in-word",
