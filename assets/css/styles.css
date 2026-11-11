@@ -121,6 +121,7 @@ h1,h2,h3{font-family:var(--display);font-optical-sizing:auto;font-weight:500;let
 a.lab-row:hover{background:var(--wash);color:inherit}
 .lab-row h3{font-size:24px}
 .lab-row p{margin:0;color:var(--ink2)}
+.lab-row .tag{justify-self:center;align-self:center;white-space:nowrap;text-align:center;line-height:1.2;padding:7px 16px}
 
 /* footer */
 .site-footer{background:var(--ink);color:#fff;padding:84px 0 40px}
@@ -190,6 +191,7 @@ blockquote cite{display:block;margin-top:12px;font:500 15px var(--body);color:va
   .cs-body{gap:28px}.toc{display:none}
   .work-grid{grid-template-columns:1fr}
   .lab-row,.xp-row{grid-template-columns:1fr;gap:6px}
+  .lab-row .tag{justify-self:start;margin-top:6px}
   .portrait{max-width:240px;aspect-ratio:1}
   .nav a:not(.pill){padding:8px 8px;font-size:14px}
   .brand{font-size:19px}
