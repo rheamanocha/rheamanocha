@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Strava card collage | Rhea Manocha</title>
+<meta name="description" content="A small tool that turns your own activity screenshots into one shareable collage. Runs entirely in your browser.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font:400 16px/1.5 Inter,system-ui,sans-serif;color:#16131F;background:#FAF8FF}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px 64px}
+.back{display:inline-block;margin:24px 0 0;font-weight:600;font-size:14px;color:#16131F;text-decoration:none;border:1.5px solid #16131F;border-radius:999px;padding:8px 16px}
+h1{font:800 clamp(34px,5vw,56px)/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;margin:26px 0 10px}
+.lede{color:#4a4560;max-width:620px;margin:0 0 24px}
+.panel{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start}
+.ctl{display:flex;flex-direction:column;gap:16px;background:#fff;border:1px solid #E4DFF5;border-radius:20px;padding:20px}
+.ctl label{font-weight:600;font-size:13px;display:flex;flex-direction:column;gap:6px}
+.drop{border:2px dashed #5B3DF5;border-radius:16px;padding:22px;text-align:center;cursor:pointer;font-weight:600;color:#5B3DF5;background:#F3F0FF}
+.drop input{display:none}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row button,.btn{border:1.5px solid #16131F;background:#fff;color:#16131F;font:600 14px Inter;border-radius:999px;padding:9px 14px;cursor:pointer}
+.row button[aria-pressed=true]{background:#16131F;color:#fff}
+.btn.p{background:#5B3DF5;border-color:#5B3DF5;color:#fff}
+input[type=color]{width:100%;height:38px;border:1.5px solid #E4DFF5;border-radius:10px;padding:2px;background:#fff}
+input[type=range]{width:100%}
+.stage{background:#EFEBFF;border-radius:20px;padding:20px;display:flex;justify-content:center;min-height:300px}
+canvas{max-width:100%;height:auto;border-radius:10px;box-shadow:0 10px 40px rgba(22,19,31,.18)}
+.empty{align-self:center;color:#6b6585;text-align:center}
+.priv{font-size:13px;color:#6b6585}
+@media(max-width:760px){.panel{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../../#lab">&larr; Back to the lab</a>
+<h1>Strava card collage</h1>
+<p class="lede">Drop in screenshots of your activity cards and get one tidy collage to share. Everything happens in your browser. Nothing is uploaded anywhere.</p>
+<div class="panel">
+ <div class="ctl">
+  <label class="drop" id="drop">Choose or drop images<input id="file" type="file" accept="image/*" multiple></label>
+  <label>Layout<div class="row" id="layout"><button data-l="grid" aria-pressed="true">Grid</button><button data-l="row" aria-pressed="false">Strip</button><button data-l="stack" aria-pressed="false">Stack</button></div></label>
+  <label>Background<input id="bg" type="color" value="#D7F25A"></label>
+  <label>Spacing<input id="gap" type="range" min="0" max="80" value="32"></label>
+  <label>Corner radius<input id="rad" type="range" min="0" max="80" value="36"></label>
+  <button class="btn p" id="dl">Download PNG</button>
+  <button class="btn" id="clr">Clear</button>
+  <p class="priv">Images stay on your device.</p>
+ </div>
+ <div class="stage"><canvas id="cv" width="1080" height="1080" hidden></canvas><p class="empty" id="empty">Add two or more screenshots to start.</p></div>
+</div>
+</div>
+<script>
+const cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+let imgs=[],layout='grid';
+const $=id=>document.getElementById(id);
+function rr(x,y,w,h,r){r=Math.min(r,w/2,h/2);ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()}
+function draw(){
+ if(!imgs.length){cv.hidden=true;$('empty').hidden=false;return}
+ cv.hidden=false;$('empty').hidden=true;
+ const g=+$('gap').value,R=+$('rad').value,n=imgs.length,pad=g;
+ let cols,rows;
+ if(layout==='grid'){cols=Math.ceil(Math.sqrt(n));rows=Math.ceil(n/cols)}
+ else if(layout==='row'){cols=n;rows=1}else{cols=1;rows=n}
+ const cell=layout==='grid'?460:layout==='row'?460:460;
+ const cw=cell,ch=layout==='grid'?cell*1.25:cell*1.25;
+ cv.width=pad+cols*(cw+g);cv.height=pad+rows*(ch+g);
+ ctx.fillStyle=$('bg').value;ctx.fillRect(0,0,cv.width,cv.height);
+ imgs.forEach((im,i)=>{
+  const c=i%cols,r=Math.floor(i/cols),x=pad+c*(cw+g),y=pad+r*(ch+g);
+  ctx.save();ctx.shadowColor='rgba(0,0,0,.22)';ctx.shadowBlur=24;ctx.shadowOffsetY=8;ctx.fillStyle='#fff';rr(x,y,cw,ch,R);ctx.fill();ctx.restore();
+  ctx.save();rr(x,y,cw,ch,R);ctx.clip();
+  const s=Math.max(cw/im.width,ch/im.height),w=im.width*s,h=im.height*s;
+  ctx.drawImage(im,x+(cw-w)/2,y+(ch-h)/2,w,h);ctx.restore();
+ });
+}
+function add(files){
+ [...files].filter(f=>f.type.startsWith('image/')).forEach(f=>{
+  const u=URL.createObjectURL(f),im=new Image();
+  im.onload=()=>{imgs.push(im);draw()};im.src=u;
+ });
+}
+$('file').onchange=e=>add(e.target.files);
+const d=$('drop');
+d.ondragover=e=>{e.preventDefault()};d.ondrop=e=>{e.preventDefault();add(e.dataTransfer.files)};
+document.querySelectorAll('#layout button').forEach(b=>b.onclick=()=>{layout=b.dataset.l;document.querySelectorAll('#layout button').forEach(x=>x.setAttribute('aria-pressed',x===b));draw()});
+['bg','gap','rad'].forEach(k=>$(k).oninput=draw);
+$('clr').onclick=()=>{imgs=[];draw()};
+$('dl').onclick=()=>{if(!imgs.length)return;const a=document.createElement('a');a.download='strava-collage.png';a.href=cv.toDataURL('image/png');a.click()};
+draw();
+</script>
+</body>
+</html>
