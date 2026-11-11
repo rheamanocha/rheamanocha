@@ -19,11 +19,12 @@ const app = () => $('#app');
 const lensOf = () => (site.lenses || []).find(l => l.key === activeLens) || null;
 const featuredList = () => lensOf()?.featured || site.featured || [];
 
-function cover(cs) {
+function cover(cs, hero) {
   const c = cs.cover || {};
   const kind = c.kind || 'document';
   let inner;
-  if (c.image) inner = `<img src="${esc(c.image)}" alt="${esc(c.alt || cs.title)}">`;
+  if (hero && c.hero) inner = `<img src="${esc(c.hero)}" alt="${esc(c.heroAlt || c.alt || cs.title)}">`;
+  else if (c.image) inner = `<img src="${esc(c.image)}" alt="${esc(c.alt || cs.title)}">`;
   else if (kind === 'video') inner = `<div class="art art-video"><div class="win"><div class="tb"><i></i><i></i><i></i></div><div class="scr"><i class="l w60"></i><i class="l w80"></i><i class="l w40"></i><span class="rec">Recording 0:12</span></div></div></div>`;
   else if (kind === 'agent') inner = `<div class="art art-agent"><div class="step">Read the thread</div><div class="step">Draft the reply</div><div class="step run">Send for review</div></div>`;
   else if (kind === 'health') inner = `<div class="art art-health"><svg viewBox="0 0 300 160" role="img" aria-label="A care path with four stops"><path d="M20 120 C80 120 70 40 140 50 S220 130 280 40" fill="none" stroke="#0B1B3F" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/><circle cx="20" cy="120" r="12" fill="#FFD84D"/><circle cx="105" cy="68" r="12" fill="#2B50FF"/><circle cx="195" cy="104" r="12" fill="#0FB5A6"/><circle cx="280" cy="40" r="12" fill="#fff" stroke="#0B1B3F" stroke-width="3"/></svg></div>`;
@@ -171,7 +172,7 @@ async function renderCase(slug, my) {
   app().innerHTML = `<div class="wrap"><div class="cs-head reveal-hero"><a class="back" href="#work">Back to my work</a>
     <h1>${esc(cs.title)}</h1><p class="cs-sum">${esc(cs.summary)}</p>
     <dl class="meta">${meta.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></div>
-    <div class="cs-cover">${cover(cs)}</div>
+    <div class="cs-cover">${cover(cs, true)}</div>
     ${cs.draft ? `<div class="draft"><strong>Draft outline.</strong> Replace the bracketed prompts with your story, then set draft to false.</div>` : ''}
     <div class="cs-body"><nav class="toc" aria-label="On this page">${toc}</nav><div>${body}
     ${n ? `<div class="next"><p>Next project</p><a href="${csLink(n.slug)}">${esc(n.title)}</a></div>` : ''}</div></div></div>`;

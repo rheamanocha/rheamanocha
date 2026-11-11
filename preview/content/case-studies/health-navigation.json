@@ -15,7 +15,9 @@
   "cover": {
     "kind": "health",
     "image": "assets/img/health/cover.jpg",
-    "alt": "Four pages from the roadmaps: visiting your OB-GYN, what to take to the doctor, your primary care appointment, and what to know about a prescription."
+    "alt": "Four pages from the roadmaps: visiting your OB-GYN, what to take to the doctor, your primary care appointment, and what to know about a prescription.",
+    "hero": "assets/img/health/poster.jpg",
+    "heroAlt": "The APHA 2022 poster, \"Women in prison deserve health equity and reproductive justice,\" showing 15 pages from the roadmaps and the project background, approach, product and impact."
   },
   "draft": false,
   "sections": [
