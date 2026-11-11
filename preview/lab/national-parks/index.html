@@ -4,95 +4,151 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>National parks tracker | Rhea Manocha</title>
-<meta name="description" content="An interactive tracker for the 63 U.S. national parks: 21 visited so far, with filters by region and status.">
+<meta name="description" content="A field-guide style tracker for the 63 U.S. national parks: 21 visited so far, with filters by region and status.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Zilla+Slab:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0B1B3F;--ink2:#46547A;--line:#DCE3F2;--wash:#F4F7FF;--go:#1E7A55;--gob:#E1F3EA;--cobalt:#2F4BFF;--sun:#FFD84D}
+:root{--navy:#14213D;--navy2:#22345F;--rock:#B5502D;--rock2:#D9774A;--sand:#E9D8B4;--cream:#F7EFDC;--pine:#2F5D3A;--sun:#E8A33D;--ink:#14213D;--mute:#8A8472}
 *{box-sizing:border-box}
-body{margin:0;background:#fff;color:var(--ink);font:400 16px/1.5 Inter,system-ui,sans-serif}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 16px/1.5 'Zilla Slab',Georgia,serif}
+.back{position:absolute;top:16px;left:16px;z-index:5;font:600 13px Oswald,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);text-decoration:none;border:1.5px solid var(--cream);border-radius:3px;padding:7px 12px;background:rgba(20,33,61,.5)}
+/* poster header */
+.poster{position:relative;background:var(--navy);color:var(--cream);overflow:hidden;text-align:center;padding:84px 24px 150px}
+.poster:before{content:"";position:absolute;left:50%;bottom:90px;width:560px;height:560px;margin-left:-280px;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(232,163,61,.22) 0 6deg,transparent 6deg 12deg);-webkit-mask:radial-gradient(circle,#000 30%,transparent 70%);mask:radial-gradient(circle,#000 30%,transparent 70%)}
+.poster .kick{position:relative;font:600 14px Oswald,sans-serif;letter-spacing:.34em;text-transform:uppercase;color:var(--sun);margin:0 0 6px}
+.poster h1{position:relative;font:700 clamp(46px,10vw,104px)/.95 Oswald,sans-serif;letter-spacing:.04em;text-transform:uppercase;margin:0}
+.poster .rule{position:relative;display:flex;align-items:center;justify-content:center;gap:14px;margin:14px auto 0;color:var(--sand);font:italic 400 clamp(15px,2vw,19px) 'Zilla Slab',serif}
+.poster .rule:before,.poster .rule:after{content:"";height:2px;width:56px;background:var(--rock2)}
+.ridge{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:150px;display:block}
+/* progress */
 .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
-.back{display:inline-block;margin:24px 0 0;font-weight:600;font-size:14px;color:var(--ink);text-decoration:none;border:1.5px solid var(--ink);border-radius:999px;padding:8px 16px}
-h1{font:600 clamp(34px,5vw,56px)/1.05 Fraunces,Georgia,serif;letter-spacing:-.02em;margin:26px 0 10px}
-.lede{color:var(--ink2);max-width:640px;margin:0 0 26px}
-.hero{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--wash);border:1px solid var(--line);border-radius:24px;padding:24px;margin-bottom:22px}
-.ring{width:150px;height:150px;position:relative}
-.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
-.ring b{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font:600 40px/1 Fraunces,serif}
-.ring span{font:500 12px Inter;color:var(--ink2);margin-top:4px}
-.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.fact{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
-.fact b{display:block;font:600 26px/1.1 Fraunces,serif}.fact span{font-size:13px;color:var(--ink2)}
-.bar{grid-column:1/-1;height:10px;border-radius:5px;background:#fff;border:1px solid var(--line);overflow:hidden}.bar i{display:block;height:100%;background:var(--go)}
-.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 18px}
-.seg{display:inline-flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden}
-.seg button{border:0;background:#fff;color:var(--ink);font:600 14px Inter;padding:9px 16px;cursor:pointer}
-.seg button[aria-pressed=true]{background:var(--ink);color:#fff}
-select,input{font:500 14px Inter;border:1.5px solid var(--line);border-radius:999px;padding:9px 14px;color:var(--ink);background:#fff}
-input{min-width:200px}
-.count{margin-left:auto;color:var(--ink2);font-size:14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;padding-bottom:64px}
-.p{border:1.5px solid var(--line);border-radius:16px;padding:14px 14px 12px;background:#fff;display:flex;flex-direction:column;gap:6px;min-height:104px;position:relative}
-.p h3{font:600 17px/1.2 Fraunces,serif;margin:0;padding-right:26px}
-.p small{color:var(--ink2);font-size:13px}
-.p .tag{margin-top:auto;font-size:12px;font-weight:600;color:var(--ink2)}
-.p.v{background:var(--gob);border-color:#9FD6BA}
-.p.v .tag{color:var(--go)}
-.p.v:after{content:"\2713";position:absolute;right:12px;top:12px;width:22px;height:22px;border-radius:11px;background:var(--go);color:#fff;font-size:13px;line-height:22px;text-align:center;font-weight:700}
-.note{color:var(--ink2);font-size:14px;margin:-4px 0 26px}
-@media(max-width:640px){.hero{grid-template-columns:1fr;justify-items:center;text-align:center}.facts{grid-template-columns:1fr 1fr 1fr;width:100%}.fact b{font-size:20px}.count{width:100%;margin-left:0}}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:-8px 0 0;border:2px solid var(--navy);border-radius:4px;background:#fff8e8;position:relative;top:-34px}
+.stat{padding:14px 10px;text-align:center;border-right:2px solid var(--navy)}.stat:last-child{border-right:0}
+.stat b{display:block;font:700 clamp(30px,5vw,46px)/1 Oswald,sans-serif;color:var(--rock);letter-spacing:.02em}
+.stat span{font:600 12px Oswald,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--navy)}
+.ticks{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin:-6px 0 30px}
+.ticks i{width:14px;height:14px;border-radius:2px;border:1.5px solid var(--navy);background:transparent}
+.ticks i.v{background:var(--rock);border-color:var(--rock)}
+/* tools */
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 8px}
+.seg{display:inline-flex;border:2px solid var(--navy);border-radius:3px;overflow:hidden}
+.seg button{height:38px;border:0;background:transparent;color:var(--navy);font:600 14px Oswald,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:9px 16px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--navy);color:var(--cream)}
+select,input{font:600 14px/20px Oswald,sans-serif;letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--navy);border-radius:3px;height:42px;padding:0 14px;color:var(--navy);background:#fff8e8}
+select{appearance:none;-webkit-appearance:none;padding-right:38px;background:#fff8e8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2314213D' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 14px center}
+input{min-width:190px}input::placeholder{color:var(--mute)}
+.count{margin-left:auto;font:italic 400 15px 'Zilla Slab',serif;color:var(--navy2)}
+.note{font:italic 400 14px 'Zilla Slab',serif;color:var(--navy2);margin:6px 0 26px}
+/* region headers + cards */
+.grid{padding-bottom:72px}
+.reg{display:flex;align-items:center;gap:14px;margin:34px 0 14px;font:700 22px Oswald,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
+.reg:after{content:"";flex:1;height:2px;background:var(--navy);box-shadow:0 5px 0 var(--navy)}
+.reg small{font:600 13px Oswald,sans-serif;color:var(--rock);letter-spacing:.12em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.p{--a:var(--mute);--b:#b9b39f;--c:#e4dcc6;position:relative;background:#fff8e8;border:2px solid #c9c2ab;border-radius:6px;padding:16px 12px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+.p .ic{width:84px;height:84px;border-radius:50%;background:#efe7d1;overflow:hidden;display:block}
+.p .ic svg{width:100%;height:100%;display:block}
+.p h3{font:600 18px/1.1 Oswald,sans-serif;letter-spacing:.07em;text-transform:uppercase;margin:2px 0 0;color:#6f6a58}
+.p small{font:italic 400 14px 'Zilla Slab',serif;color:var(--mute)}
+.p.v{--a:var(--navy);--b:var(--rock);--c:var(--sand);background:#fffaf0;border-color:var(--navy);box-shadow:4px 4px 0 var(--rock)}
+.p.v .ic{background:var(--sand);border:2px solid var(--navy)}
+.p.v h3{color:var(--navy)}.p.v small{color:var(--navy2)}
+.p.v:after{content:"VISITED";position:absolute;right:-6px;top:10px;transform:rotate(11deg);font:700 11px Oswald,sans-serif;letter-spacing:.18em;color:var(--rock);border:2px solid var(--rock);border-radius:3px;padding:2px 6px;background:rgba(255,250,240,.9)}
+.empty{font:italic 400 18px 'Zilla Slab',serif;padding:30px 0}
+@media(max-width:640px){.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.p .ic{width:68px;height:68px}.p h3{font-size:15px}.stat b{font-size:28px}.count{width:100%;margin-left:0}.poster{padding-bottom:130px}.ticks i{width:11px;height:11px}.p.v:after{right:-2px;font-size:10px}}
 </style>
 </head>
 <body>
+<header class="poster">
+ <a class="back" href="../../#lab">&larr; Back to the lab</a>
+ <p class="kick">Field log</p>
+ <h1>National Parks</h1>
+ <p class="rule">Sixty-three parks, one long list</p>
+ <svg class="ridge" viewBox="0 0 1200 150" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 150V92l70-34 60 38 90-62 100 70 80-44 110 60 90-78 120 76 70-34 100 56 80-50 110 62 70-34 90 40V150z" fill="#22345F"/>
+  <path d="M0 150V118l90-30 70 36 100-48 90 58 110-40 80 44 120-62 90 56 110-38 90 52 100-34 110 40 40-16V150z" fill="#B5502D"/>
+  <path d="M0 150V132l120-26 90 34 130-30 110 30 140-34 100 26 120-24 100 30 140-22 150 20V150z" fill="#F7EFDC"/>
+ </svg>
+</header>
 <div class="wrap">
-<a class="back" href="../../#lab">&larr; Back to the lab</a>
-<h1>National parks tracker</h1>
-<p class="lede">An interactive tracker for the 63 U.S. national parks. Filter by region or status to see where I've been and what's still on the list.</p>
-<section class="hero" aria-label="Progress">
-  <div class="ring" role="img" aria-label="21 of 63 parks visited"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#fff" stroke-width="14"/><circle id="arc" cx="60" cy="60" r="52" fill="none" stroke="#1E7A55" stroke-width="14" stroke-linecap="round" stroke-dasharray="0 400"/></svg><b><span id="vn" style="font:600 40px/1 Fraunces,serif;color:var(--ink);margin:0">21</span><span>of 63</span></b></div>
-  <div class="facts">
-   <div class="fact"><b id="pct">33%</b><span>of all parks</span></div>
-   <div class="fact"><b id="left">42</b><span>still to go</span></div>
-   <div class="fact"><b>5 of 5</b><span>Utah Mighty 5</span></div>
-   <div class="bar"><i id="barfill" style="width:33%"></i></div>
-  </div>
-</section>
-<div class="tools">
+ <section class="stats" aria-label="Progress">
+  <div class="stat"><b id="vn">21</b><span>Visited</span></div>
+  <div class="stat"><b id="left">42</b><span>Still to go</span></div>
+  <div class="stat"><b>5 / 5</b><span>Utah Mighty 5</span></div>
+ </section>
+ <div class="ticks" id="ticks" role="img" aria-label="21 of 63 parks visited"></div>
+ <div class="tools">
   <div class="seg" role="group" aria-label="Filter by status"><button data-f="all" aria-pressed="true">All</button><button data-f="v" aria-pressed="false">Visited</button><button data-f="t" aria-pressed="false">To go</button></div>
   <select id="region" aria-label="Region"><option value="">All regions</option></select>
   <input id="q" type="search" placeholder="Search parks" aria-label="Search parks">
   <span class="count" id="count"></span>
 </div>
-<p class="note">Parks are listed with their state. Visited means I've spent real time in the park, not just passed through.</p>
-<div class="grid" id="grid"></div>
+ <div class="grid" id="grid"></div>
 </div>
 <script>
-// region, name, state(s), visited
+// Icon motifs. a = main ink, b = accent, c = light. Colors come from the card via CSS variables.
+const F=(c,d)=>`fill="var(--${c})"${d?' '+d:''}`;
+const IC={
+peak:`<path ${F('a')} d="M4 52 24 16l9 14 7-9 20 31z"/><path ${F('c')} d="m24 16 6 9-4-2-3 4-3-4-4 2z"/><path ${F('b')} d="M33 30l7-9 20 31H41z" opacity=".9"/>`,
+glacier:`<path ${F('a')} d="M4 54 20 20l10 18 8-14 22 30z"/><path ${F('c')} d="m20 20 5 9-5-2-4 5-3-5z"/><path ${F('b')} d="M2 54h60v4H2z"/>`,
+arch:`<path ${F('b')} d="M6 56V28q0-14 26-14t26 14v28H46V32q0-8-14-8T18 32v24z"/><circle ${F('c')} cx="48" cy="12" r="5"/><path ${F('a')} d="M2 56h60v4H2z"/>`,
+gateway:`<path ${F('a')} d="M12 58V54Q12 12 32 6q20 6 20 48v4h-6v-4Q46 22 32 14 18 22 18 54v4z"/><path ${F('b')} d="M2 58h60v4H2z"/>`,
+canyon:`<path ${F('b')} d="M2 20h14v8h10v8h10v8h10v8h14v14H2z"/><path ${F('a')} d="M2 52h12v6H2zm48 0h12v6H50z"/><path ${F('c')} d="M18 56h28v2H18z"/>`,
+ruins:`<path ${F('b')} d="M4 14h56v14H44v8H36v8H28v-8h-8v-8H4z"/><path ${F('a')} d="M16 44h14v12H16zm18 4h12v8H34z"/><path ${F('c')} d="M22 48h4v8h-4zm16 4h4v4h-4z"/>`,
+hoodoo:`<path ${F('b')} d="M8 58V30l4-6 4 4 3-14 4 14 4-6v38zm26 0V34l3-8 4 6 3-12 4 12 4-4v30z"/><path ${F('a')} d="M2 56h60v6H2z"/><circle ${F('c')} cx="52" cy="14" r="5"/>`,
+tree:`<path ${F('a')} d="M16 56V44l-8 0 8-12-6 0 10-16 10 16h-6l8 12h-8v12z"/><path ${F('b')} d="M42 58V40h-6l9-14 9 14h-6v18z"/><path ${F('c')} d="M2 58h60v3H2z"/>`,
+geyser:`<path ${F('c')} d="M32 6c6 8 10 14 6 22 4 0 8 4 4 8H22c-4-4 0-8 4-8-4-8 0-14 6-22z"/><path ${F('a')} d="M4 58V46q14-6 28 0t28 0v12z"/><path ${F('b')} d="M20 46h24v12H20z" opacity=".35"/>`,
+cactus:`<path ${F('a')} d="M28 58V14q0-6 4-6t4 6v44zm-2-22H18V22q0-3 3-3t3 3v6h2zm12-8h2V16q0-3 3-3t3 3v16h-8z"/><path ${F('b')} d="M2 58h60v4H2z"/><circle ${F('c')} cx="52" cy="14" r="6"/>`,
+joshua:`<path ${F('a')} d="M30 58V36l-10-8 0-10q4-2 6 2l4 6V26l-8-6v-6q4-2 6 3l2 6 2-8q3-3 5 0v10l6-6q3 0 3 4l-8 10v18z"/><path ${F('b')} d="M2 58h60v4H2z"/><circle ${F('c')} cx="12" cy="14" r="6"/>`,
+dunes:`<circle ${F('c')} cx="46" cy="16" r="7"/><path ${F('b')} d="M2 44Q20 24 34 40T62 34v26H2z"/><path ${F('a')} d="M2 54Q22 42 40 52t22-4v12H2z"/>`,
+coast:`<path ${F('a')} d="M2 30 18 14l8 8 12-14 24 22v34H2z"/><path ${F('c')} d="M2 44q8-6 15 0t15 0 15 0 15 0v6q-8 6-15 0t-15 0-15 0-15 0z"/><path ${F('b')} d="M2 54q8-6 15 0t15 0 15 0 15 0v8H2z"/>`,
+island:`<circle ${F('c')} cx="14" cy="14" r="6"/><path ${F('a')} d="M36 44V26q-8-2-16 4 6-10 16-10 2-8 10-8-6 4-6 8 10 0 16 8-8-4-14-2v18z"/><path ${F('b')} d="M12 46q14-6 40 0 8 4 10 12H2q0-8 10-12z"/>`,
+volcano:`<path ${F('a')} d="M2 58 24 22h16l22 36z"/><path ${F('b')} d="M24 22h16l-3 6-5-3-5 4z"/><path ${F('b')} d="M30 30l2 8-3 6 5 0-1-8z"/><circle ${F('c')} cx="20" cy="12" r="4"/><circle ${F('c')} cx="32" cy="8" r="5"/>`,
+cave:`<path ${F('a')} d="M2 6h60v14l-6 2-4 14-4-14-6 2-4 16-4-16-6 0-4 12-4-12-6 2-4 10-4-10-8-4z"/><path ${F('b')} d="M2 50q16-12 30-4t30-4v18H2z"/><path ${F('c')} d="M24 56h4v-6l-2-3-2 3zm16 0h4l-2-8z"/>`,
+lake:`<circle ${F('c')} cx="32" cy="22" r="9"/><path ${F('a')} d="M2 38 18 22l10 12 10-14 14 14 8-6v14H2z"/><path ${F('b')} d="M2 38h60v22H2z"/><path ${F('c')} d="M10 46h18v2H10zm24 6h20v2H34z"/>`,
+falls:`<path ${F('a')} d="M2 6h22v16H2zm38 0h22v16H40z"/><path ${F('c')} d="M24 6h16v40H24z"/><path ${F('b')} d="M2 46h60v16H2z"/><path ${F('c')} d="M10 54h10v2H10zm34 4h10v2H44z"/>`,
+marsh:`<path ${F('a')} d="M8 58 10 24l3 34zm10 0 4-38 3 38zm10 0 2-30 3 30zm10 0 5-36 3 36zm12 0 1-26 3 26z"/><path ${F('b')} d="M2 52q9-6 15 0t15 0 15 0 15 0v10H2z"/><circle ${F('c')} cx="52" cy="12" r="6"/>`,
+badlands:`<path ${F('b')} d="M2 58V40l8-6 6 8 10-14 8 10 8-8 8 10 12 0v18z"/><path ${F('a')} d="M2 52h60v6H2z"/><path ${F('c')} d="M6 46h20v2H6zm22-6h24v2H28z"/>`,
+stars:`<path ${F('a')} d="M2 62V46l12-10 10 8 12-14 14 14 12-6v24z"/><path ${F('c')} d="m14 8 2 5 5 .5-4 3 1 5-4-3-4 3 1-5-4-3 5-.5zm30 6 1.5 4 4 .4-3 2.5.8 4-3.3-2.4-3.5 2.4 1-4-3-2.5 4-.4z"/><circle ${F('b')} cx="30" cy="12" r="3"/>`,
+bridge:`<path ${F('a')} d="M2 22h60v4H2z"/><path ${F('b')} d="M6 54Q32 6 58 54h-6Q32 18 12 54z"/><path ${F('a')} d="M14 26h2v18h-2zm10 0h2v10h-2zm14 0h2v10h-2zm10 0h2v18h-2z"/><path ${F('c')} d="M2 58h60v4H2z"/>`,
+bear:`<path ${F('a')} d="M10 34q0-12 14-14l4-6 4 6h10q12 2 16 14l-6 6v10h-8V44H26v10h-8V44z"/><circle ${F('c')} cx="20" cy="30" r="2.5"/><path ${F('b')} d="M2 58q14-6 30 0t30 0v4H2z"/>`,
+fjord:`<path ${F('a')} d="M2 10 22 40l8-12 10 16 22-30v44H2z"/><path ${F('c')} d="m22 40 4 5-6-1z"/><path ${F('b')} d="M2 48q10-6 20 0t20 0 20 0v12H2z"/>`,
+smokies:`<path ${F('a')} d="M2 40q10-14 22-4t20-12 18 8v28H2z"/><path ${F('b')} d="M2 50q16-10 30-2t30-4v18H2z"/><path ${F('c')} d="M8 22q6-4 12 0t12 0 12 0 12 0v3q-6 4-12 0t-12 0-12 0-12 0z" opacity=".9"/>`,
+sandy:`<path ${F('c')} d="M2 52q20-16 30-8t30-6v24H2z"/><path ${F('a')} d="M6 52q8-24 26-30 4 2 4 6-6 4-10 10-6 6-14 10z"/><circle ${F('b')} cx="50" cy="16" r="7"/>`
+};
+// region, name, state, visited, motif
 const P=[
-["West Coast","Channel Islands","CA",0],["West Coast","Death Valley","CA, NV",1],["West Coast","Joshua Tree","CA",1],["West Coast","Kings Canyon","CA",1],["West Coast","Lassen Volcanic","CA",0],["West Coast","Pinnacles","CA",1],["West Coast","Redwood","CA",1],["West Coast","Sequoia","CA",1],["West Coast","Yosemite","CA",1],
-["Pacific Northwest","Crater Lake","OR",1],["Pacific Northwest","Mount Rainier","WA",1],["Pacific Northwest","North Cascades","WA",0],["Pacific Northwest","Olympic","WA",1],
-["Utah and Southwest","Arches","UT",1],["Utah and Southwest","Bryce Canyon","UT",1],["Utah and Southwest","Canyonlands","UT",1],["Utah and Southwest","Capitol Reef","UT",1],["Utah and Southwest","Zion","UT",1],["Utah and Southwest","Grand Canyon","AZ",1],["Utah and Southwest","Petrified Forest","AZ",0],["Utah and Southwest","Saguaro","AZ",0],["Utah and Southwest","Great Basin","NV",0],["Utah and Southwest","Carlsbad Caverns","NM",0],["Utah and Southwest","White Sands","NM",0],
-["Rockies and Plains","Black Canyon of the Gunnison","CO",0],["Rockies and Plains","Great Sand Dunes","CO",0],["Rockies and Plains","Mesa Verde","CO",0],["Rockies and Plains","Rocky Mountain","CO",0],["Rockies and Plains","Glacier","MT",0],["Rockies and Plains","Grand Teton","WY",1],["Rockies and Plains","Yellowstone","WY, MT, ID",1],["Rockies and Plains","Badlands","SD",0],["Rockies and Plains","Wind Cave","SD",0],["Rockies and Plains","Theodore Roosevelt","ND",0],
-["Texas and South","Big Bend","TX",0],["Texas and South","Guadalupe Mountains","TX",0],["Texas and South","Hot Springs","AR",0],["Texas and South","Congaree","SC",0],["Texas and South","Great Smoky Mountains","TN, NC",0],["Texas and South","Mammoth Cave","KY",0],["Texas and South","Biscayne","FL",0],["Texas and South","Dry Tortugas","FL",0],["Texas and South","Everglades","FL",0],
-["Midwest and East","Gateway Arch","MO",0],["Midwest and East","Indiana Dunes","IN",1],["Midwest and East","Cuyahoga Valley","OH",0],["Midwest and East","Isle Royale","MI",0],["Midwest and East","Voyageurs","MN",0],["Midwest and East","New River Gorge","WV",0],["Midwest and East","Shenandoah","VA",0],["Midwest and East","Acadia","ME",1],
-["Alaska","Denali","AK",0],["Alaska","Gates of the Arctic","AK",0],["Alaska","Glacier Bay","AK",0],["Alaska","Katmai","AK",0],["Alaska","Kenai Fjords","AK",0],["Alaska","Kobuk Valley","AK",0],["Alaska","Lake Clark","AK",0],["Alaska","Wrangell–St. Elias","AK",0],
-["Hawaii and Islands","Haleakala","HI",1],["Hawaii and Islands","Hawaii Volcanoes","HI",0],["Hawaii and Islands","American Samoa","AS",0],["Hawaii and Islands","Virgin Islands","VI",0]];
+["West Coast","Channel Islands","CA",0,"coast"],["West Coast","Death Valley","CA, NV",1,"dunes"],["West Coast","Joshua Tree","CA",1,"joshua"],["West Coast","Kings Canyon","CA",1,"peak"],["West Coast","Lassen Volcanic","CA",0,"volcano"],["West Coast","Pinnacles","CA",1,"badlands"],["West Coast","Redwood","CA",1,"tree"],["West Coast","Sequoia","CA",1,"tree"],["West Coast","Yosemite","CA",1,"falls"],
+["Pacific Northwest","Crater Lake","OR",1,"lake"],["Pacific Northwest","Mount Rainier","WA",1,"glacier"],["Pacific Northwest","North Cascades","WA",0,"peak"],["Pacific Northwest","Olympic","WA",1,"coast"],
+["Utah and Southwest","Arches","UT",1,"arch"],["Utah and Southwest","Bryce Canyon","UT",1,"hoodoo"],["Utah and Southwest","Canyonlands","UT",1,"canyon"],["Utah and Southwest","Capitol Reef","UT",1,"canyon"],["Utah and Southwest","Zion","UT",1,"canyon"],["Utah and Southwest","Grand Canyon","AZ",1,"canyon"],["Utah and Southwest","Petrified Forest","AZ",0,"badlands"],["Utah and Southwest","Saguaro","AZ",0,"cactus"],["Utah and Southwest","Great Basin","NV",0,"stars"],["Utah and Southwest","Carlsbad Caverns","NM",0,"cave"],["Utah and Southwest","White Sands","NM",0,"dunes"],
+["Rockies and Plains","Black Canyon of the Gunnison","CO",0,"canyon"],["Rockies and Plains","Great Sand Dunes","CO",0,"dunes"],["Rockies and Plains","Mesa Verde","CO",0,"ruins"],["Rockies and Plains","Rocky Mountain","CO",0,"peak"],["Rockies and Plains","Glacier","MT",0,"glacier"],["Rockies and Plains","Grand Teton","WY",1,"lake"],["Rockies and Plains","Yellowstone","WY, MT, ID",1,"geyser"],["Rockies and Plains","Badlands","SD",0,"badlands"],["Rockies and Plains","Wind Cave","SD",0,"cave"],["Rockies and Plains","Theodore Roosevelt","ND",0,"badlands"],
+["Texas and South","Big Bend","TX",0,"cactus"],["Texas and South","Guadalupe Mountains","TX",0,"peak"],["Texas and South","Hot Springs","AR",0,"geyser"],["Texas and South","Congaree","SC",0,"marsh"],["Texas and South","Great Smoky Mountains","TN, NC",0,"smokies"],["Texas and South","Mammoth Cave","KY",0,"cave"],["Texas and South","Biscayne","FL",0,"island"],["Texas and South","Dry Tortugas","FL",0,"island"],["Texas and South","Everglades","FL",0,"marsh"],
+["Midwest and East","Gateway Arch","MO",0,"gateway"],["Midwest and East","Indiana Dunes","IN",1,"sandy"],["Midwest and East","Cuyahoga Valley","OH",0,"falls"],["Midwest and East","Isle Royale","MI",0,"lake"],["Midwest and East","Voyageurs","MN",0,"lake"],["Midwest and East","New River Gorge","WV",0,"bridge"],["Midwest and East","Shenandoah","VA",0,"smokies"],["Midwest and East","Acadia","ME",1,"coast"],
+["Alaska","Denali","AK",0,"peak"],["Alaska","Gates of the Arctic","AK",0,"peak"],["Alaska","Glacier Bay","AK",0,"glacier"],["Alaska","Katmai","AK",0,"bear"],["Alaska","Kenai Fjords","AK",0,"fjord"],["Alaska","Kobuk Valley","AK",0,"dunes"],["Alaska","Lake Clark","AK",0,"lake"],["Alaska","Wrangell–St. Elias","AK",0,"glacier"],
+["Hawaii and Islands","Haleakala","HI",1,"volcano"],["Hawaii and Islands","Hawaii Volcanoes","HI",0,"volcano"],["Hawaii and Islands","American Samoa","AS",0,"island"],["Hawaii and Islands","Virgin Islands","VI",0,"island"]];
 const V=P.filter(p=>p[3]).length,T=P.length;
 const grid=document.getElementById('grid'),reg=document.getElementById('region'),q=document.getElementById('q');
-[...new Set(P.map(p=>p[0]))].forEach(r=>{const o=document.createElement('option');o.value=r;o.textContent=r;reg.appendChild(o)});
+const regions=[...new Set(P.map(p=>p[0]))];
+regions.forEach(r=>{const o=document.createElement('option');o.value=r;o.textContent=r;reg.appendChild(o)});
 let f='all';
+const icon=m=>`<span class="ic"><svg viewBox="0 0 64 64" aria-hidden="true">${IC[m]||IC.peak}</svg></span>`;
 function draw(){
  const t=q.value.trim().toLowerCase(),r=reg.value;
  const L=P.filter(p=>(f==='all'||(f==='v'?p[3]:!p[3]))&&(!r||p[0]===r)&&(!t||(p[1]+' '+p[2]).toLowerCase().includes(t)));
- grid.innerHTML=L.map(p=>`<div class="p${p[3]?' v':''}"><h3>${p[1]}</h3><small>${p[2]}</small><span class="tag">${p[3]?'Visited':'Still on the list'}</span></div>`).join('')||'<p>No parks match.</p>';
+ let h='';
+ regions.forEach(rg=>{
+  const rows=L.filter(p=>p[0]===rg);if(!rows.length)return;
+  const rv=P.filter(p=>p[0]===rg&&p[3]).length,rt=P.filter(p=>p[0]===rg).length;
+  h+=`<div class="reg">${rg}<small>${rv} of ${rt}</small></div><div class="cards">`+rows.map(p=>`<div class="p${p[3]?' v':''}">${icon(p[4])}<h3>${p[1]}</h3><small>${p[2]}</small></div>`).join('')+`</div>`;
+ });
+ grid.innerHTML=h||'<p class="empty">No parks match.</p>';
  document.getElementById('count').textContent=L.length+' of '+T+' parks shown';
 }
 document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{f=b.dataset.f;document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',x===b));draw()});
 reg.onchange=draw;q.oninput=draw;
 document.getElementById('vn').textContent=V;document.getElementById('left').textContent=T-V;
-const pc=Math.round(V/T*100);document.getElementById('pct').textContent=pc+'%';document.getElementById('barfill').style.width=pc+'%';
-document.getElementById('arc').setAttribute('stroke-dasharray',(V/T*2*Math.PI*52)+' 400');
+document.getElementById('ticks').innerHTML=P.map(p=>`<i class="${p[3]?'v':''}"></i>`).join('');
 draw();
 console.assert(T===63&&V===21,'counts',T,V);
 </script>
