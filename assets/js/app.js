@@ -7,7 +7,7 @@ const md = s => esc(s)
   .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
   .replace(/\[([^\]]+)\]\((https?:[^)\s]+|[\w\-./?=#]+)\)/g, '<a href="$2">$1</a>');
 const paras = s => String(s ?? '').split(/\n\s*\n/).filter(Boolean).map(p => `<p>${md(p)}</p>`).join('');
-const getJSON = p => fetch(p).then(r => { if (!r.ok) throw new Error(p + ' ' + r.status); return r.json(); });
+const getJSON = p => fetch(p, { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(p + ' ' + r.status); return r.json(); });
 const csLink = slug => `#case-${encodeURIComponent(slug)}`;
 const cache = new Map();
 const study = slug => {
