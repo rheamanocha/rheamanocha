@@ -85,10 +85,7 @@ async function renderHome(my) {
   const hero = `
   <section class="hero"><div class="wrap hero-grid">
     <div class="reveal-hero"><h1>${esc(lens.headline || h.headline)}</h1><p class="lede">${md(lens.intro || h.intro)}</p>
-      <div class="hero-cta"><a class="btn btn-primary" href="#work">See my work</a>
-        ${L.resume ? `<a class="btn btn-ghost" href="${esc(L.resume)}">Resume</a>` : ''}
-        ${L.linkedin ? `<a class="btn btn-ghost" href="${esc(L.linkedin)}" rel="noopener">LinkedIn</a>` : ''}</div>
-      <p class="now">${esc(h.now)}</p></div>
+    </div>
     <div class="grid-bg"><div class="ask">
       <div class="ask-in"><span class="sp" aria-hidden="true"></span><span id="ask-text"></span><span class="caret" aria-hidden="true"></span></div>
       <div class="ask-out" id="ask-out" aria-live="polite"></div></div>
