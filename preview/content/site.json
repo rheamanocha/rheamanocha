@@ -42,7 +42,7 @@
           "Waiting for your review"
         ],
         "slug": "gather-agent",
-        "related": "Gather Agent and Copilot Actions"
+        "related": "Copilot Actions"
       }
     ]
   },
@@ -148,7 +148,7 @@
       "text": "I've designed Copilot features and exploratory agents that take work off people's plates. When I want to test an idea, I vibe code it with Claude instead of waiting on a mockup.\n\nThe lab below is a small collection of what came out of that.",
       "links": [
         {
-          "label": "Gather Agent and Copilot Actions",
+          "label": "Copilot Actions",
           "slug": "gather-agent"
         },
         {
