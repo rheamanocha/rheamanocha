@@ -152,7 +152,7 @@
           "slug": "gather-agent"
         },
         {
-          "label": "Catch Up in Word",
+          "label": "Catching up in Word, Excel, and PowerPoint",
           "slug": "catch-up-in-word"
         },
         {
@@ -170,7 +170,7 @@
           "slug": "stream-screen-recording"
         },
         {
-          "label": "Catch Up in Word",
+          "label": "Catching up in Word, Excel, and PowerPoint",
           "slug": "catch-up-in-word"
         }
       ]
@@ -184,37 +184,43 @@
         "title": "On Repeat Recipes",
         "text": "My cookbook website: the recipes I keep coming back to, in an editorial index you can browse and filter.",
         "url": "lab/recipes/",
-        "tag": "Built with Claude"
+        "tag": "Built with Claude",
+        "image": "assets/img/lab/recipes.jpg"
       },
       {
         "title": "National parks tracker",
         "text": "An interactive tracker for the 63 U.S. national parks: 21 visited so far, filterable by region and status.",
         "url": "lab/national-parks/",
-        "tag": "Built with Claude"
+        "tag": "Built with Claude",
+        "image": "assets/img/lab/national-parks.jpg"
       },
       {
         "title": "Fitness Wrapped",
         "text": "An animated year-in-review for training data, in the spirit of the music apps' recaps. Shown with sample data.",
         "url": "lab/fitness-wrapped/",
-        "tag": "Concept"
+        "tag": "Concept",
+        "image": "assets/img/lab/fitness-wrapped.jpg"
       },
       {
         "title": "Strava card collage",
         "text": "Drop in activity screenshots and export one shareable collage. Runs entirely in your browser.",
         "url": "lab/strava-collage/",
-        "tag": "Built with Claude"
+        "tag": "Built with Claude",
+        "image": "assets/img/lab/strava-collage.jpg"
       },
       {
         "title": "Travel log interfaces",
         "text": "Five interface directions for a personal travel log. Sample content.",
         "url": "lab/travel-log/",
-        "tag": "Design exploration"
+        "tag": "Design exploration",
+        "image": "assets/img/lab/travel-log.jpg"
       },
       {
         "title": "Habit tracker",
         "text": "A lightweight habit tracker demo that saves to your own browser. Sample data.",
         "url": "lab/habits/",
-        "tag": "Demo"
+        "tag": "Demo",
+        "image": "assets/img/lab/habits.jpg"
       }
     ]
   },

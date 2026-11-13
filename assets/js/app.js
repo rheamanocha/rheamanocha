@@ -103,10 +103,11 @@ async function renderHome(my) {
       </div></section>`,
     lab: `<section class="section" id="lab"><div class="wrap">
       <div class="sec-head"><h2>${esc(site.lab?.title || 'Lab')}</h2><p>${esc(site.lab?.intro || '')}</p></div>
-      <div class="lab-list">${(site.lab?.items || []).map(i => {
+      <div class="car"><div class="car-track" tabindex="0" aria-label="Lab projects">${(site.lab?.items || []).map(i => {
         const tag = i.url ? 'a' : 'div';
-        return `<${tag} class="lab-row" ${i.url ? `href="${esc(i.url)}" rel="noopener"` : ''}><h3>${esc(i.title)}</h3><p>${esc(i.text)}</p><span class="tag">${esc(i.tag || 'Built with Claude')}</span></${tag}>`;
-      }).join('')}</div></div></section>`
+        return `<${tag} class="car-tile" ${i.url ? `href="${esc(i.url)}" rel="noopener"` : ''}><span class="car-img">${i.image ? `<img src="${esc(i.image)}" alt="Preview of ${esc(i.title)}" loading="lazy">` : ''}</span><span class="tag">${esc(i.tag || 'Built with Claude')}</span><h3>${esc(i.title)}</h3><p>${esc(i.text)}</p></${tag}>`;
+      }).join('')}</div>
+      <div class="car-nav"><button type="button" data-car="-1" aria-label="Previous projects">&larr;</button><button type="button" data-car="1" aria-label="Next projects">&rarr;</button></div></div></div></section>`
   };
   const order = lens.sectionOrder || ['work', 'strengths', 'lab'];
   app().innerHTML = hero + order.map(k => sections[k] || '').join('');
@@ -116,7 +117,7 @@ async function renderHome(my) {
   $('#work-grid').innerHTML = studies.filter(Boolean).map(cs => `
     <a class="tile" href="${csLink(cs.slug)}">${cover(cs)}
       <h3>${esc(cs.title)}</h3><p>${esc(cs.summary)}</p>
-      <div class="tags">${cs.status ? `<span class="tag status">${esc(cs.status)}</span>` : ''}${(cs.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div></a>`).join('');
+      <div class="tags">${(cs.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div></a>`).join('');
 }
 
 function pubs(p) {
@@ -213,3 +214,9 @@ async function route() {
     app().innerHTML = `<div class="wrap" style="padding:80px 28px"><h1>Content didn't load</h1><p>Check that content/site.json exists and is valid JSON.</p></div>`;
   }
 })();
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-car]'); if (!b) return;
+  const t = document.querySelector('.car-track'); if (!t) return;
+  t.scrollBy({ left: Number(b.dataset.car) * t.clientWidth * 0.8, behavior: 'smooth' });
+});
