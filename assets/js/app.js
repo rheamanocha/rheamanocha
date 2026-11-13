@@ -93,7 +93,7 @@ async function renderHome(my) {
   </div></section>`;
   const sections = {
     work: `<section class="section" id="work"><div class="wrap">
-      <div class="sec-head"><h2>${esc(site.work?.title || 'Selected work')}</h2><p>${esc(lens.workIntro || site.work?.intro || '')}</p></div>
+      <div class="sec-head"><h2>${esc(site.work?.title || 'Selected work')}</h2>${(lens.workIntro || site.work?.intro) ? `<p>${esc(lens.workIntro || site.work?.intro)}</p>` : ''}</div>
       <div class="work-grid" id="work-grid"></div></div></section>`,
     strengths: `<section class="section wash" id="strengths"><div class="wrap">
       ${pillars.map(p => `<div class="pillar"><h3>${esc(p.title)}</h3><div>${paras(p.text)}<div class="chips">${(p.links || []).map(l => `<a class="chip" href="${l.slug ? csLink(l.slug) : esc(l.url)}">${esc(l.label)}</a>`).join('')}</div></div></div>`).join('')}
