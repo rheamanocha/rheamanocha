@@ -107,8 +107,9 @@ h1,h2,h3{font-family:var(--display);font-optical-sizing:auto;font-weight:500;let
 .art-health svg{width:100%;height:auto;display:block}
 
 /* strengths */
-.pillar{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;padding:40px 0;border-top:1.5px solid var(--ink)}
-.pillar:last-child{border-bottom:1.5px solid var(--ink)}
+.pillar{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;padding:40px 0}
+.pillar+.pillar{border-top:1px solid #CBD5EA}
+.pillar p:last-child{margin-bottom:0}
 .pillar h3{font-size:clamp(1.7rem,3vw,2.4rem)}
 .pillar p{margin:0 0 18px;color:var(--ink2);font-size:18px}
 .chips{display:flex;flex-wrap:wrap;gap:10px}
@@ -246,3 +247,5 @@ blockquote cite{display:block;margin-top:12px;font:500 15px var(--body);color:va
 .work-grid .tile:not(:first-child) .cover{opacity:.9;filter:saturate(.85)}
 .work-grid .tile:not(:first-child) .tags{display:none}
 @media(max-width:860px){.work-grid{grid-template-columns:1fr}.work-grid .tile:first-child{grid-template-columns:1fr;grid-template-rows:auto}.work-grid .tile:first-child .cover,.work-grid .tile:first-child h3,.work-grid .tile:first-child p,.work-grid .tile:first-child .tags{grid-column:1;grid-row:auto}.work-grid .tile:first-child h3{margin-top:20px}}
+
+.work-grid .tile .tags{display:none}

@@ -107,8 +107,9 @@ h1,h2,h3{font-family:var(--display);font-optical-sizing:auto;font-weight:500;let
 .art-health svg{width:100%;height:auto;display:block}
 
 /* strengths */
-.pillar{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;padding:40px 0;border-top:1.5px solid var(--ink)}
-.pillar:last-child{border-bottom:1.5px solid var(--ink)}
+.pillar{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;padding:40px 0}
+.pillar+.pillar{border-top:1px solid #CBD5EA}
+.pillar p:last-child{margin-bottom:0}
 .pillar h3{font-size:clamp(1.7rem,3vw,2.4rem)}
 .pillar p{margin:0 0 18px;color:var(--ink2);font-size:18px}
 .chips{display:flex;flex-wrap:wrap;gap:10px}
@@ -117,9 +118,9 @@ h1,h2,h3{font-family:var(--display);font-optical-sizing:auto;font-weight:500;let
 
 /* lab carousel (full bleed) */
 .car{--gutter:max(28px,calc((100vw - var(--wrap)) / 2 + 28px));position:relative;width:100%}
-.car-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px var(--gutter) 22px;scroll-padding-left:var(--gutter);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.car-track{display:flex;gap:24px;overflow-x:auto;scroll-behavior:smooth;padding:6px var(--gutter) 22px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .car-track::-webkit-scrollbar{display:none}
-.car-tile{flex:0 0 min(460px,80vw);scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;color:inherit;text-decoration:none}
+.car-tile{flex:0 0 min(460px,80vw);display:flex;flex-direction:column;gap:8px;color:inherit;text-decoration:none}
 .car-img{display:block;width:100%;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:var(--wash);border:1px solid var(--line);margin-bottom:10px;transition:transform .25s,box-shadow .25s}
 a.car-tile:hover .car-img{transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,27,63,.16)}
 a.car-tile:hover{color:inherit}
@@ -246,3 +247,5 @@ blockquote cite{display:block;margin-top:12px;font:500 15px var(--body);color:va
 .work-grid .tile:not(:first-child) .cover{opacity:.9;filter:saturate(.85)}
 .work-grid .tile:not(:first-child) .tags{display:none}
 @media(max-width:860px){.work-grid{grid-template-columns:1fr}.work-grid .tile:first-child{grid-template-columns:1fr;grid-template-rows:auto}.work-grid .tile:first-child .cover,.work-grid .tile:first-child h3,.work-grid .tile:first-child p,.work-grid .tile:first-child .tags{grid-column:1;grid-row:auto}.work-grid .tile:first-child h3{margin-top:20px}}
+
+.work-grid .tile .tags{display:none}
