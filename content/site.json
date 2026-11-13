@@ -181,6 +181,13 @@
     "intro": "Small things I've built with Claude. Some are useful, some are just fun. Open any of them and try it.",
     "items": [
       {
+        "title": "run away with rhea",
+        "text": "My travel blog: national parks, local trips and international adventures, written as guides you can actually follow.",
+        "url": "https://runawaywithrhea.com",
+        "tag": "Travel blog",
+        "image": "assets/img/lab/travel-blog.jpg"
+      },
+      {
         "title": "On Repeat Recipes",
         "text": "My cookbook website: the recipes I keep coming back to, in an editorial index you can browse and filter.",
         "url": "lab/recipes/",
