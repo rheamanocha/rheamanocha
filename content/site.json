@@ -31,7 +31,7 @@
           "Link copied for your team"
         ],
         "slug": "stream-screen-recording",
-        "related": "Screen recording in Stream"
+        "related": "Screen recording in M365"
       },
       {
         "prompt": "Handle the follow-ups from this meeting",
@@ -166,7 +166,7 @@
       "text": "Work tools have to be clear for new users and fast for people who live in them. I've designed across Microsoft 365 surfaces and teams, and I'm comfortable with the complexity that comes with products at that scale.",
       "links": [
         {
-          "label": "Screen recording in Stream",
+          "label": "Screen recording in M365",
           "slug": "stream-screen-recording"
         },
         {
