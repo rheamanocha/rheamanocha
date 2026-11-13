@@ -99,15 +99,17 @@ async function renderHome(my) {
       ${pillars.map(p => `<div class="pillar"><h3>${esc(p.title)}</h3><div>${paras(p.text)}</div></div>`).join('')}
       </div></section>`,
     lab: `<section class="section" id="lab"><div class="wrap">
-      <div class="sec-head"><h2>${esc(site.lab?.title || 'Lab')}</h2><p>${esc(site.lab?.intro || '')}</p></div>
-      <div class="car"><div class="car-track" tabindex="0" aria-label="Lab projects">${(site.lab?.items || []).map(i => {
+      <div class="sec-head"><h2>${esc(site.lab?.title || 'Lab')}</h2><p>${esc(site.lab?.intro || '')}</p></div></div>
+      <div class="car"><div class="car-track" tabindex="0" aria-label="Lab projects">${[0, 1, 2].map(copy => (site.lab?.items || []).map(i => {
         const tag = i.url ? 'a' : 'div';
-        return `<${tag} class="car-tile" ${i.url ? `href="${esc(i.url)}" rel="noopener"` : ''}><span class="car-img">${i.image ? `<img src="${esc(i.image)}" alt="Preview of ${esc(i.title)}" loading="lazy">` : ''}</span><span class="tag">${esc(i.tag || 'Built with Claude')}</span><h3>${esc(i.title)}</h3><p>${esc(i.text)}</p></${tag}>`;
-      }).join('')}</div>
-      <div class="car-nav"><button type="button" data-car="-1" aria-label="Previous projects">&larr;</button><button type="button" data-car="1" aria-label="Next projects">&rarr;</button></div></div></div></section>`
+        const clone = copy ? ' aria-hidden="true"' + (i.url ? ' tabindex="-1"' : '') : '';
+        return `<${tag} class="car-tile" ${i.url ? `href="${esc(i.url)}" rel="noopener"${/^https?:/.test(i.url) ? ' target="_blank"' : ''}` : ''}${clone}><span class="car-img">${i.image ? `<img src="${esc(i.image)}" alt="${copy ? '' : 'Preview of ' + esc(i.title)}" loading="lazy">` : ''}</span><h3>${esc(i.title)}</h3><p>${esc(i.text)}</p></${tag}>`;
+      }).join('')).join('')}</div>
+      <div class="car-nav"><button type="button" data-car="-1" aria-label="Previous projects">&larr;</button><button type="button" data-car="1" aria-label="Next projects">&rarr;</button></div></div></section>`
   };
   const order = lens.sectionOrder || ['work', 'strengths', 'lab'];
   app().innerHTML = hero + order.map(k => sections[k] || '').join('');
+  initCarousel();
   heroDemo(prompts, my);
   const studies = await Promise.all(featured.map(study));
   if (my !== runId) return;
@@ -217,3 +219,26 @@ document.addEventListener('click', e => {
   const t = document.querySelector('.car-track'); if (!t) return;
   t.scrollBy({ left: Number(b.dataset.car) * t.clientWidth * 0.8, behavior: 'smooth' });
 });
+
+function initCarousel() {
+  const t = document.querySelector('.car-track');
+  if (!t || t.children.length < 3) return;
+  const n = t.children.length / 3;
+  const span = () => t.children[n].offsetLeft - t.children[0].offsetLeft;
+  const pad = () => parseFloat(getComputedStyle(t).paddingLeft) || 0;
+  t.style.scrollBehavior = 'auto';
+  t.scrollLeft = t.children[n].offsetLeft - pad();
+  t.style.scrollBehavior = '';
+  let timer;
+  t.addEventListener('scroll', () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      const w = span(), mid = t.children[n].offsetLeft - pad();
+      if (t.scrollLeft < mid - w * 0.5 || t.scrollLeft > mid + w * 0.5) {
+        t.style.scrollBehavior = 'auto';
+        t.scrollLeft += t.scrollLeft < mid ? w : -w;
+        t.style.scrollBehavior = '';
+      }
+    }, 140);
+  }, { passive: true });
+}
